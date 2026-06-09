@@ -3,7 +3,7 @@
     {
       "nombre": "pocion",
       "cantidad": 3,
-      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
       "img": "assets/items/pocion.png",
     }
   ],
@@ -11,19 +11,19 @@
     {
       "nombre": "pocion",
       "cantidad": 1,
-      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
       "img": "assets/items/pocion.png",
     },
     {
       "nombre": "espada",
       "cantidad": 1,
-      "descripcion": "Daño: 1 d 8 - \"Espada Sangriente\" Cuando bla bla.."
+      "descripcion": "Daño: 1 d 8 - \"Espada Sangriente\" Cuando bla bla..",
       "img": "assets/items/espada.png",
     },
     {
       "nombre": "tunica",
       "cantidad": 1,
-      "descripcion": "CA 20"
+      "descripcion": "CA 20",
       "img": "assets/items/tunica.png",
     }
   ],
@@ -31,13 +31,13 @@
     {
       "nombre": "espada larga",
       "cantidad": 1,
-      "descripcion": "Daño: 1 d 8 - \"Espada divina\" Cuando bla bla.."
+      "descripcion": "Daño: 1 d 8 - \"Espada divina\" Cuando bla bla..",
       "img": "assets/items/espada larga.png",
     },
     {
       "nombre": "pocion",
       "cantidad": 1,
-      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
       "img": "assets/items/pocion.png",
     }
   ],
@@ -45,13 +45,13 @@
     {
       "nombre": "guantes",
       "cantidad": 1,
-      "descripcion": "asdasd"
+      "descripcion": "asdasd",
       "img": "assets/items/guantes.png",
     },
     {
       "nombre": "pocion",
       "cantidad": 1,
-      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
       "img": "assets/items/pocion.png",
     }
   ],
@@ -59,13 +59,13 @@
     {
       "nombre": "botas",
       "cantidad": 1,
-      "descripcion": "asdasd"
+      "descripcion": "asdasd",
       "img": "assets/items/botas.png",
     },
     {
       "nombre": "pocion",
       "cantidad": 1,
-      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
       "img": "assets/items/pocion.png",
     }
   ],
@@ -73,13 +73,13 @@
     {
       "nombre": "anillo",
       "cantidad": 1,
-      "descripcion": "asdasd"
+      "descripcion": "asdasd",
       "img": "assets/items/anillo.png",
     },
     {
       "nombre": "brazalete",
       "cantidad": 1,
-      "descripcion": "asdasd"
+      "descripcion": "asdasd",
       "img": "assets/items/brazalete.png",
     },
     {
