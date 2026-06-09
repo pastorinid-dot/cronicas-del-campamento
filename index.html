@@ -849,7 +849,16 @@ canvas.onclick = (e) => {
 
 // Navegación
 function mostrarTab(tab) {
+  
+const fondo = document.querySelector(".fondo");
 
+if (tab === "biblioteca") {
+  fondo.style.backgroundImage = "url('assets/fondo2.jpg')";
+} 
+else {
+  fondo.style.backgroundImage = "url('assets/fondo.jpg')";
+}
+  
   document.getElementById('inicio').classList.toggle('oculto', tab !== 'inicio');
   document.getElementById('app').classList.toggle('oculto', tab === 'inicio');
 
