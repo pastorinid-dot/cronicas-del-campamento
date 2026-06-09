@@ -525,38 +525,52 @@ let capituloActual = 0;
 
 async function iniciarCarga(){
 
-  const historias =
-    await fetch("data/historias.json")
-      .then(r => r.json());
+  try{
+    data.capitulos =
+      await fetch("data/historias.json")
+      .then(r=>r.json());
 
-  const personajes =
-    await fetch("data/personajes.json")
-      .then(r => r.json());
+    console.log("historias OK");
+  }
+  catch(e){
+    console.error("historias ERROR",e);
+  }
 
-  const inventarios =
-    await fetch("data/inventario.json")
-      .then(r => r.json());
+  try{
+    data.personajes =
+      await fetch("data/personajes.json")
+      .then(r=>r.json());
 
-  const ciudades =
-    await fetch("data/mapa.json")
-      .then(r => r.json());
+    console.log("personajes OK");
+  }
+  catch(e){
+    console.error("personajes ERROR",e);
+  }
 
-  data.capitulos = historias;
-  data.personajes = personajes;
-  data.inventarios = inventarios;
-  data.ciudades = ciudades;
+  try{
+    data.inventarios =
+      await fetch("data/inventario.json")
+      .then(r=>r.json());
 
-  document.querySelector(".fondo").style.backgroundImage =
-    "url('assets/fondo.jpg')";
+    console.log("inventario OK");
+  }
+  catch(e){
+    console.error("inventario ERROR",e);
+  }
 
-  document.getElementById("mapaImg").src =
-    "assets/mapa.jpg";
+  try{
+    data.ciudades =
+      await fetch("data/mapa.json")
+      .then(r=>r.json());
+
+    console.log("mapa OK");
+  }
+  catch(e){
+    console.error("mapa ERROR",e);
+  }
 
   renderTodo();
 }
-
-
-
 
 
 
