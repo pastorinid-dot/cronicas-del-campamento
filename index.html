@@ -850,10 +850,18 @@ canvas.onclick = (e) => {
 // Navegación
 function mostrarTab(tab) {
 
-  console.log("TAB:", tab);
+  const fondo = document.querySelector(".fondo");
 
-  document.getElementById('inicio').classList.toggle('oculto', tab !== 'inicio');
-  document.getElementById('app').classList.toggle('oculto', tab === 'inicio');
+  fondo.style.backgroundImage =
+    tab === "biblioteca"
+      ? "url('assets/fondo2.jpg')"
+      : "url('assets/fondo.jpg')";
+
+  document.getElementById('inicio')
+    .classList.toggle('oculto', tab !== 'inicio');
+
+  document.getElementById('app')
+    .classList.toggle('oculto', tab === 'inicio');
 
   const tabs = ['capitulos','personajes','mapa','biblioteca'];
 
@@ -863,19 +871,15 @@ function mostrarTab(tab) {
   });
 
   const activo = document.getElementById('tab-' + tab);
-  if (activo) {
-    activo.classList.remove('oculto');
-  }
-
-  const fondo = document.querySelector(".fondo");
-
-  fondo.style.backgroundImage =
-    tab === "biblioteca"
-      ? "url('assets/fondo2.jpg')"
-      : "url('assets/fondo.jpg')";
+  if (activo) activo.classList.remove('oculto');
 
   if (tab === 'mapa') setTimeout(dibujarMapa, 100);
-  if (tab === 'biblioteca') renderBiblioteca();
+
+  if (tab === 'biblioteca') {
+    requestAnimationFrame(() => {
+      renderBiblioteca();
+    });
+  }
 }
 
 
