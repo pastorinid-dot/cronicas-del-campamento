@@ -572,24 +572,14 @@ let data = {
   personajes: [],
   ciudades: [],
   tiradas: [],
-  inventarios: {}
+  inventario: {}
 };
 let tooltipActivo = null;
 let imgTemp = '';
 let assets = {};
 let capituloActual = 0;
   
-function sonidoPagina(){
 
-  const audio =
-    document.getElementById("sonidoPagina");
-
-  audio.currentTime = 0;
-
-  audio.volume = 0.4;
-
-  audio.play();
-}
   
 
 async function iniciarCarga(){
@@ -899,7 +889,7 @@ function capituloSiguiente(){
 }
 
 function toggleIndice(){
-
+sonidoSiguiente();
   const indice =
     document.getElementById("indiceCapitulos");
 
@@ -1130,7 +1120,7 @@ function sonidoSiguiente(){
     document.getElementById("audioSiguiente");
 
   a.currentTime = 0;
-  a.volume = 0.4;
+  a.volume = 0.15;
   a.play();
 }
 
@@ -1140,7 +1130,7 @@ function sonidoAnterior(){
     document.getElementById("audioAnterior");
 
   a.currentTime = 0;
-  a.volume = 0.4;
+  a.volume = 0.15;
   a.play();
 }
 
