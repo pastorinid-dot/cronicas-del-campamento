@@ -523,19 +523,23 @@ let assets = {};
 let capituloActual = 0;
 
 
-async function iniciarCarga() {
+async function iniciarCarga(){
 
-  const historias = await fetch("historias.json")
-    .then(r => r.json());
+  const historias =
+    await fetch("data/historias.json")
+      .then(r => r.json());
 
-  const personajes = await fetch("personajes.json")
-    .then(r => r.json());
+  const personajes =
+    await fetch("data/personajes.json")
+      .then(r => r.json());
 
-  const inventarios = await fetch("inventarios.json")
-    .then(r => r.json());
+  const inventarios =
+    await fetch("data/inventario.json")
+      .then(r => r.json());
 
-  const ciudades = await fetch("mapa.json")
-    .then(r => r.json());
+  const ciudades =
+    await fetch("data/mapa.json")
+      .then(r => r.json());
 
   data.capitulos = historias;
   data.personajes = personajes;
@@ -543,9 +547,7 @@ async function iniciarCarga() {
   data.ciudades = ciudades;
 
   renderTodo();
-
-  }
-
+}
 
 
 
