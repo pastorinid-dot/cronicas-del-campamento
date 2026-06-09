@@ -879,7 +879,7 @@ ${p.estado === "muerto"
   : `<p>⭐ Nivel ${p.nivel}</p>`
 }
 <img
-  src="${assets['bolsa.png'].url}"
+  src="assets/bolsa.png"
   style="
     width:50px;
     cursor:pointer;
@@ -922,8 +922,8 @@ function aplicarAssets() {
 
   if (fondo) {
 
-    document.querySelector(".fondo").style.backgroundImage =
-      `url(${assets[fondo].url})`;
+   document.querySelector(".fondo").style.backgroundImage =
+  "url('assets/fondo.jpg')";
 
     document.querySelector(".fondo").style.backgroundSize = "cover";
     document.querySelector(".fondo").style.backgroundPosition = "center";
@@ -943,7 +943,7 @@ function aplicarAssets() {
 
     if (mapaImg) {
 
-      mapaImg.src = assets[mapa].url;
+     mapaImg.src = "assets/mapa.jpg";
 
       console.log("URL mapa:", assets[mapa].url);
     }
