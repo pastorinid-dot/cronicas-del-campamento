@@ -368,11 +368,53 @@ input, textarea, select {
  .pergamino { margin: 10px; padding: 15px; }
  .titulo-baldur { font-size: 2rem!important; }
 }
+
+  #musicPlayer{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:9999;
+}
+
+#btnMusica{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+
+  font-size:24px;
+
+  background:#3e2723;
+  color:#ffd54f;
+
+  box-shadow:
+    0 0 15px rgba(255,140,0,.5);
+
+  transition:.3s;
+}
+
+#btnMusica:hover{
+  transform:scale(1.1);
+}
+
+  
 </style>
 </head>
 <body>
 
- 
+ <div id="musicPlayer">
+
+  <button id="btnMusica"
+          onclick="toggleMusica()">
+    🔊
+  </button>
+
+  <audio id="musicaFondo" loop>
+    <source src="assets/musica/taberna.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
 
 
 
@@ -996,7 +1038,26 @@ function toggleDesc(el) {
 
 iniciarCarga();
 
+const musica =
+  document.getElementById("musicaFondo");
 
+function toggleMusica(){
+
+  if(musica.paused){
+
+    musica.play();
+
+    document.getElementById("btnMusica")
+      .innerHTML = "🔊";
+
+  }else{
+
+    musica.pause();
+
+    document.getElementById("btnMusica")
+      .innerHTML = "🔇";
+  }
+}
 
 
 
