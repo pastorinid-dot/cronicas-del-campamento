@@ -4,7 +4,7 @@
       "nombre": "pocion",
       "cantidad": 3,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png"
+      "img": "assets/items/pocion.jpg"
     }
   ],
   "Celyddon": [
@@ -12,13 +12,13 @@
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png"
+      "img": "assets/items/pocion.jpg"
     },
     {
       "nombre": "espada",
       "cantidad": 1,
       "descripcion": "Daño: 1 d 8 - \"Espada Sangriente\" Cuando bla bla..",
-      "img": "assets/items/espada.png"
+      "img": "assets/items/espada.jpg"
     },
     {
       "nombre": "tunica",
@@ -38,7 +38,7 @@
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png"
+      "img": "assets/items/pocion.jpg"
     }
   ],
   "Casris": [
@@ -52,7 +52,7 @@
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png"
+      "img": "assets/items/pocion.jpg"
     }
   ],
   "Zakwell": [
@@ -66,7 +66,7 @@
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png"
+      "img": "assets/items/pocion.jpg"
     }
   ],
   "Makondo": [
@@ -86,7 +86,7 @@
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-        "img": "assets/items/pocion.png"
+        "img": "assets/items/pocion.jpg"
     }
   ]
 }
