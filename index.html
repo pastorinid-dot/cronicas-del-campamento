@@ -547,53 +547,29 @@ let assets = {};
 let capituloActual = 0;
 
 
-function iniciarCarga(){
+async function iniciarCarga() {
 
-  google.script.run
-    .withSuccessHandler(function(assetsResult){
+  const historias = await fetch("historias.json")
+    .then(r => r.json());
 
-      assets = assetsResult;
-      aplicarAssets();
+  const personajes = await fetch("personajes.json")
+    .then(r => r.json());
 
-      google.script.run
-        .withSuccessHandler(function(historias){
+  const inventarios = await fetch("inventarios.json")
+    .then(r => r.json());
 
-          data.capitulos = historias || [];
+  const ciudades = await fetch("mapa.json")
+    .then(r => r.json());
 
-          google.script.run
-            .withSuccessHandler(function(personajes){
+  data.capitulos = historias;
+  data.personajes = personajes;
+  data.inventarios = inventarios;
+  data.ciudades = ciudades;
 
-              data.personajes = personajes || [];
+  renderTodo();
 
-              google.script.run
-                .withSuccessHandler(function(inventarios){
-
-                  data.inventarios = inventarios || {};
-
-                  google.script.run
-                    .withSuccessHandler(function(ciudades){
-
-                      data.ciudades = ciudades || [];
-
-                      renderTodo();
-
-                      cargaLista = true;
-                      intentarOcultar();
-
-                    })
-                    .cargarMapa();
-
-                })
-                .cargarInventarios();
-
-            })
-            .cargarPersonajes();
-
-        })
-        .cargarHistorias();
-
-    })
-    .getAssets();
+  cargaLista = true;
+  intentarOcultar();
 }
 
 
