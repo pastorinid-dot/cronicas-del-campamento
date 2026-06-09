@@ -85,7 +85,8 @@
     {
       "nombre": "pocion",
       "cantidad": 1,
-      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
+        "img": "assets/items/pocion.png",
     }
   ]
 }
