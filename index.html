@@ -372,31 +372,7 @@ input, textarea, select {
 </head>
 <body>
 
- <div id="loadingScreen" style="
  
-  position:fixed;
-  inset:0;
-  background:#0a0503;
-  color:#ffd54f;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  font-family:Cinzel;
-  z-index:99999;
-  text-align:center;
-  padding:20px;
-">
-<div class="campfire">
-  
-  <div class="embers"></div>
-</div>
-
-  <div style="font-size:28px;">🔥 Encendiendo el fuego 🔥 </div>
-  <div id="loadingText" style="margin-top:20px; font-size:16px;">
-    Espera unos segundos...
-  </div>
-</div>
 
 
 
@@ -568,9 +544,7 @@ async function iniciarCarga() {
 
   renderTodo();
 
-  cargaLista = true;
-  intentarOcultar();
-}
+  }
 
 
 
@@ -1030,31 +1004,10 @@ function toggleDesc(el) {
   }
 }
 
-let cargaLista = false;
-let tiempoListo = false;
 
 
-function intentarOcultar(){
 
-  if(!cargaLista || !tiempoListo) return;
 
-  const loading = document.getElementById("loadingScreen");
-
-  if (loading) {
-    loading.style.transition = "opacity 1s";
-    loading.style.opacity = "0";
-
-    setTimeout(() => {
-      loading.style.display = "none";
-    }, 1000);
-  }
-}
-iniciarCarga();
-
-setTimeout(() => {
-  tiempoListo = true;
-  intentarOcultar();
-}, 5000);
 
 
 
