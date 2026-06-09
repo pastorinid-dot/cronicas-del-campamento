@@ -159,7 +159,8 @@ input, textarea, select {
 }
 
 .pagina{
-
+  animation: aparecerPagina .3s ease;
+  
   position: relative;
 
   background:
@@ -186,7 +187,20 @@ input, textarea, select {
   transition:.3s;
 
 }
+  
+@keyframes aparecerPagina{
 
+  from{
+    opacity:0;
+    transform:translateX(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+  
 .pagina::before{
 
   content:'';
