@@ -568,7 +568,14 @@ async function iniciarCarga(){
   catch(e){
     console.error("mapa ERROR",e);
   }
+  
+// Fondo
+document.querySelector(".fondo").style.backgroundImage =
+  "url('assets/fondo.jpg')";
 
+// Mapa
+document.getElementById("mapaImg").src =
+  "assets/mapa.jpg";
   renderTodo();
 }
 
