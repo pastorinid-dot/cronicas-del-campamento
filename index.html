@@ -467,7 +467,7 @@ input, textarea, select {
       "La noche es fría, únete junto al fuego..."<br>
       Te contaré una historia.
     </p>
-    <button class="btn" style="font-size: 1.5rem; padding: 15px 40px;" onclick="mostrarTab('capitulos')">🔥 Entrar al Campamento</button>
+    <button class="btn" style="font-size: 1.5rem; padding: 15px 40px;" onclick="entrarCampamento()">🔥 Entrar al Campamento</button>
   </div>
 
   <!-- APP PRINCIPAL -->
@@ -1059,6 +1059,14 @@ function toggleMusica(){
   }
 }
 
+  function entrarCampamento(){
+
+  mostrarTab('capitulos');
+
+  musica.play()
+    .catch(()=>{});
+
+}
 
 
 
