@@ -1,0 +1,79 @@
+{
+  "Batohu": [
+    {
+      "nombre": "pocion",
+      "cantidad": 3,
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+    }
+  ],
+  "Celyddon": [
+    {
+      "nombre": "pocion",
+      "cantidad": 1,
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+    },
+    {
+      "nombre": "espada",
+      "cantidad": 1,
+      "descripcion": "Daño: 1 d 8 - \"Espada Sangriente\" Cuando bla bla.."
+    },
+    {
+      "nombre": "tunica",
+      "cantidad": 1,
+      "descripcion": "CA 20"
+    }
+  ],
+  "Ashram": [
+    {
+      "nombre": "espada larga",
+      "cantidad": 1,
+      "descripcion": "Daño: 1 d 8 - \"Espada divina\" Cuando bla bla.."
+    },
+    {
+      "nombre": "pocion",
+      "cantidad": 1,
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+    }
+  ],
+  "Casris": [
+    {
+      "nombre": "guantes",
+      "cantidad": 1,
+      "descripcion": "asdasd"
+    },
+    {
+      "nombre": "pocion",
+      "cantidad": 1,
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+    }
+  ],
+  "Zakwell": [
+    {
+      "nombre": "botas",
+      "cantidad": 1,
+      "descripcion": "asdasd"
+    },
+    {
+      "nombre": "pocion",
+      "cantidad": 1,
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+    }
+  ],
+  "Makondo": [
+    {
+      "nombre": "anillo",
+      "cantidad": 1,
+      "descripcion": "asdasd"
+    },
+    {
+      "nombre": "brazalete",
+      "cantidad": 1,
+      "descripcion": "asdasd"
+    },
+    {
+      "nombre": "pocion",
+      "cantidad": 1,
+      "descripcion": "Cura: 1 d 6 - \"Poción menor\""
+    }
+  ]
+}
