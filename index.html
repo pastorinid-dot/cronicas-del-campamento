@@ -437,7 +437,13 @@ input, textarea, select {
 <audio id="audioAnterior" preload="auto">
   <source src="assets/sonidos/pagina-anterior.mp3" type="audio/mpeg">
 </audio>
+<audio id="audioAbrirInventario" preload="auto">
+  <source src="assets/sonidos/abrir-bolsa.mp3" type="audio/mpeg">
+</audio>
 
+<audio id="audioCerrarInventario" preload="auto">
+  <source src="assets/sonidos/cerrar-bolsa.mp3" type="audio/mpeg">
+</audio>
    
 </div>
 
@@ -1024,6 +1030,7 @@ function renderTodo() {
 
  
 function abrirInventario(nombre){
+  sonidoAbrirInventario();
 
   const items =
     data.inventario[nombre] || [];
@@ -1057,7 +1064,7 @@ function abrirInventario(nombre){
 }
 
 function cerrarInventario(){
-
+  sonidoCerrarInventario();
   document.getElementById("modalInventario")
     .classList.add("oculto");
 }
@@ -1153,7 +1160,25 @@ function sonidoAnterior(){
   }, 250);
 
 }
+function sonidoAbrirInventario(){
 
+  const a =
+    document.getElementById("audioAbrirInventario");
+
+  a.currentTime = 0;
+  a.volume = 0.20;
+  a.play();
+}
+
+function sonidoCerrarInventario(){
+
+  const a =
+    document.getElementById("audioCerrarInventario");
+
+  a.currentTime = 0;
+  a.volume = 0.20;
+  a.play();
+}
   
 </script>
 </body>
