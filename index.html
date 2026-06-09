@@ -548,7 +548,7 @@ async function iniciarCarga(){
   }
 
   try{
-    data.inventarios =
+    data.inventario =
       await fetch("data/inventario.json")
       .then(r=>r.json());
 
@@ -942,7 +942,7 @@ function renderTodo() {
 function abrirInventario(nombre){
 
   const items =
-    data.inventarios[nombre] || [];
+    data.inventario[nombre] || [];
 
   document.getElementById("tituloInventario")
     .innerText =
