@@ -45,7 +45,7 @@
     "nombre": "Kael",
     "clase": "Clerigo",
     "nivel": "11.0",
-    "estado": "Muerto",
+    "estado": "muerto",
     "img":"assets/personajes/Kael.png"
   }
 ]
