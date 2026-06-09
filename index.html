@@ -546,6 +546,12 @@ async function iniciarCarga(){
   data.inventarios = inventarios;
   data.ciudades = ciudades;
 
+  document.querySelector(".fondo").style.backgroundImage =
+    "url('assets/fondo.jpg')";
+
+  document.getElementById("mapaImg").src =
+    "assets/mapa.jpg";
+
   renderTodo();
 }
 
@@ -909,45 +915,9 @@ function renderTodo() {
  dibujarMapa();
 }
 
+ 
 
-
-
-
-
-  // FONDO
-  const fondo = Object.keys(assets)
-    .find(nombre => nombre.toLowerCase().startsWith("fondo"));
-
-  if (fondo) {
-
-   document.querySelector(".fondo").style.backgroundImage =
-  "url('assets/fondo.jpg')";
-
-    document.querySelector(".fondo").style.backgroundSize = "cover";
-    document.querySelector(".fondo").style.backgroundPosition = "center";
-
-    console.log("URL fondo:", assets[fondo].url);
-  }
-
-  
-
-  // MAPA
-  const mapa = Object.keys(assets)
-    .find(nombre => nombre.toLowerCase().startsWith("mapa"));
-
-  if (mapa) {
-
-    const mapaImg = document.getElementById("mapaImg");
-
-    if (mapaImg) {
-
-     mapaImg.src = "assets/mapa.jpg";
-
-      console.log("URL mapa:", assets[mapa].url);
-    }
-  }
-}
-
+ 
 function abrirInventario(nombre){
 
   const items =
