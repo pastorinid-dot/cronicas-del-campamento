@@ -2,49 +2,49 @@
   {
     "nombre": "Celyddon",
     "clase": "Explorador",
-    "nivel": "11.0",
+    "nivel": "10",
     "estado": "vivo",
     "img":"assets/personajes/Celyddon.png"
   },
   {
     "nombre": "Zakwell",
     "clase": "Mago",
-    "nivel": "11.0",
+    "nivel": "10",
     "estado": "muerto",
     "img":"assets/personajes/Zakwell.png"
   },
   {
     "nombre": "Ashram",
     "clase": "Paladin",
-    "nivel": "11.0",
+    "nivel": "10",
     "estado": "vivo",
     "img":"assets/personajes/Ashram.png"
   },
   {
     "nombre": "Batohu",
     "clase": "Bardo",
-    "nivel": "11.0",
+    "nivel": "10",
     "estado": "vivo",
     "img":"assets/personajes/Batohu.png"
   },
   {
     "nombre": "Makondo",
     "clase": "Picaro",
-    "nivel": "11.0",
+    "nivel": "10",
     "estado": "vivo",
     "img":"assets/personajes/Makondo.png"
   },
   {
     "nombre": "Casris",
     "clase": "Brujo",
-    "nivel": "11.0",
+    "nivel": "10",
     "estado": "vivo",
     "img":"assets/personajes/Casris.png"
   },
   {
     "nombre": "Kael",
     "clase": "Clerigo",
-    "nivel": "11.0",
+    "nivel": "10",
     "estado": "muerto",
     "img":"assets/personajes/Kael.png"
   }
