@@ -849,15 +849,20 @@ canvas.onclick = (e) => {
 
 // Navegación
 function mostrarTab(tab) {
-  document.getElementById('inicio').classList.toggle('oculto', tab!== 'inicio');
+
+  document.getElementById('inicio').classList.toggle('oculto', tab !== 'inicio');
   document.getElementById('app').classList.toggle('oculto', tab === 'inicio');
 
-  ['capitulos','personajes','mapa'].forEach(t => {
-    document.getElementById('tab-'+t).classList.toggle('oculto', t!== tab);
+  ['capitulos','personajes','mapa','biblioteca'].forEach(t => {
+    const el = document.getElementById('tab-' + t);
+    if (el) el.classList.toggle('oculto', t !== tab);
   });
 
-  if(tab === 'mapa') setTimeout(dibujarMapa, 100);
-  if(tab === 'biblioteca') renderBiblioteca();
+  if (tab === 'mapa') setTimeout(dibujarMapa, 100);
+
+  if (tab === 'biblioteca') {
+    renderBiblioteca();
+  }
 }
 
 
