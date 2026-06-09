@@ -850,12 +850,7 @@ canvas.onclick = (e) => {
 // Navegación
 function mostrarTab(tab) {
 
-  const fondo = document.querySelector(".fondo");
-
-  fondo.style.backgroundImage =
-    tab === "biblioteca"
-      ? "url('assets/fondo2.jpg')"
-      : "url('assets/fondo.jpg')";
+  console.log("TAB:", tab);
 
   document.getElementById('inicio').classList.toggle('oculto', tab !== 'inicio');
   document.getElementById('app').classList.toggle('oculto', tab === 'inicio');
@@ -868,12 +863,20 @@ function mostrarTab(tab) {
   });
 
   const activo = document.getElementById('tab-' + tab);
-  if (activo) activo.classList.remove('oculto');
+  if (activo) {
+    activo.classList.remove('oculto');
+  }
+
+  const fondo = document.querySelector(".fondo");
+
+  fondo.style.backgroundImage =
+    tab === "biblioteca"
+      ? "url('assets/fondo2.jpg')"
+      : "url('assets/fondo.jpg')";
 
   if (tab === 'mapa') setTimeout(dibujarMapa, 100);
   if (tab === 'biblioteca') renderBiblioteca();
 }
-
 
 
 function renderCapitulos() {
