@@ -849,29 +849,29 @@ canvas.onclick = (e) => {
 
 // Navegación
 function mostrarTab(tab) {
-  
-const fondo = document.querySelector(".fondo");
 
-if (tab === "biblioteca") {
-  fondo.style.backgroundImage = "url('assets/fondo2.jpg')";
-} 
-else {
-  fondo.style.backgroundImage = "url('assets/fondo.jpg')";
-}
-  
+  const fondo = document.querySelector(".fondo");
+
+  fondo.style.backgroundImage =
+    tab === "biblioteca"
+      ? "url('assets/fondo2.jpg')"
+      : "url('assets/fondo.jpg')";
+
   document.getElementById('inicio').classList.toggle('oculto', tab !== 'inicio');
   document.getElementById('app').classList.toggle('oculto', tab === 'inicio');
 
-  ['capitulos','personajes','mapa','biblioteca'].forEach(t => {
+  const tabs = ['capitulos','personajes','mapa','biblioteca'];
+
+  tabs.forEach(t => {
     const el = document.getElementById('tab-' + t);
-    if (el) el.classList.toggle('oculto', t !== tab);
+    if (el) el.classList.add('oculto');
   });
 
-  if (tab === 'mapa') setTimeout(dibujarMapa, 100);
+  const activo = document.getElementById('tab-' + tab);
+  if (activo) activo.classList.remove('oculto');
 
-  if (tab === 'biblioteca') {
-    renderBiblioteca();
-  }
+  if (tab === 'mapa') setTimeout(dibujarMapa, 100);
+  if (tab === 'biblioteca') renderBiblioteca();
 }
 
 
