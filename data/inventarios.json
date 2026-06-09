@@ -4,7 +4,7 @@
       "nombre": "pocion",
       "cantidad": 3,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png",
+      "img": "assets/items/pocion.png"
     }
   ],
   "Celyddon": [
@@ -12,19 +12,19 @@
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png",
+      "img": "assets/items/pocion.png"
     },
     {
       "nombre": "espada",
       "cantidad": 1,
       "descripcion": "Daño: 1 d 8 - \"Espada Sangriente\" Cuando bla bla..",
-      "img": "assets/items/espada.png",
+      "img": "assets/items/espada.png"
     },
     {
       "nombre": "tunica",
       "cantidad": 1,
       "descripcion": "CA 20",
-      "img": "assets/items/tunica.png",
+      "img": "assets/items/tunica.png"
     }
   ],
   "Ashram": [
@@ -32,13 +32,13 @@
       "nombre": "espada larga",
       "cantidad": 1,
       "descripcion": "Daño: 1 d 8 - \"Espada divina\" Cuando bla bla..",
-      "img": "assets/items/espada larga.png",
+      "img": "assets/items/espada larga.png"
     },
     {
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png",
+      "img": "assets/items/pocion.png"
     }
   ],
   "Casris": [
@@ -46,13 +46,13 @@
       "nombre": "guantes",
       "cantidad": 1,
       "descripcion": "asdasd",
-      "img": "assets/items/guantes.png",
+      "img": "assets/items/guantes.png"
     },
     {
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png",
+      "img": "assets/items/pocion.png"
     }
   ],
   "Zakwell": [
@@ -60,13 +60,13 @@
       "nombre": "botas",
       "cantidad": 1,
       "descripcion": "asdasd",
-      "img": "assets/items/botas.png",
+      "img": "assets/items/botas.png"
     },
     {
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-      "img": "assets/items/pocion.png",
+      "img": "assets/items/pocion.png"
     }
   ],
   "Makondo": [
@@ -74,19 +74,19 @@
       "nombre": "anillo",
       "cantidad": 1,
       "descripcion": "asdasd",
-      "img": "assets/items/anillo.png",
+      "img": "assets/items/anillo.png"
     },
     {
       "nombre": "brazalete",
       "cantidad": 1,
       "descripcion": "asdasd",
-      "img": "assets/items/brazalete.png",
+      "img": "assets/items/brazalete.png"
     },
     {
       "nombre": "pocion",
       "cantidad": 1,
       "descripcion": "Cura: 1 d 6 - \"Poción menor\"",
-        "img": "assets/items/pocion.png",
+        "img": "assets/items/pocion.png"
     }
   ]
 }
