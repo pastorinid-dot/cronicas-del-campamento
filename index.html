@@ -402,7 +402,11 @@ input, textarea, select {
 </style>
 </head>
 <body>
-
+  
+<audio id="musicaFondo" loop>
+  <source src="assets/musica/taberna.mp3" type="audio/mpeg">
+</audio>
+  
  <div id="musicPlayer">
 
   <button id="btnMusica"
@@ -467,7 +471,11 @@ input, textarea, select {
       "La noche es fría, únete junto al fuego..."<br>
       Te contaré una historia.
     </p>
-    <button class="btn" style="font-size: 1.5rem; padding: 15px 40px;" onclick="entrarCampamento()">🔥 Entrar al Campamento</button>
+    <button class="btn"
+        style="font-size: 1.5rem; padding: 15px 40px;"
+        onclick="entrarCampamento()">
+  🔥 Entrar al Campamento
+</button>
   </div>
 
   <!-- APP PRINCIPAL -->
@@ -1059,13 +1067,24 @@ function toggleMusica(){
   }
 }
 
-  function entrarCampamento(){
+function entrarCampamento(){
 
   mostrarTab('capitulos');
 
-  musica.play()
-    .catch(()=>{});
+  const musica =
+    document.getElementById("musicaFondo");
 
+  if(musica){
+
+    musica.play()
+      .then(() => {
+        document.getElementById("btnMusica").innerHTML = "🔊";
+      })
+      .catch(err => {
+        console.log("Autoplay bloqueado:", err);
+      });
+
+  }
 }
 
 
