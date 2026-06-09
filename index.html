@@ -578,7 +578,19 @@ let tooltipActivo = null;
 let imgTemp = '';
 let assets = {};
 let capituloActual = 0;
+  
+function sonidoPagina(){
 
+  const audio =
+    document.getElementById("sonidoPagina");
+
+  audio.currentTime = 0;
+
+  audio.volume = 0.4;
+
+  audio.play();
+}
+  
 
 async function iniciarCarga(){
 
