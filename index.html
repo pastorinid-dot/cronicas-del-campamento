@@ -416,6 +416,15 @@ input, textarea, select {
     <source src="assets/musica/taberna1.mp3" type="audio/mpeg">
   </audio>
 
+   <audio id="audioSiguiente" preload="auto">
+  <source src="assets/sonidos/pagina-siguiente.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="audioAnterior" preload="auto">
+  <source src="assets/sonidos/pagina-anterior.mp3" type="audio/mpeg">
+</audio>
+
+   
 </div>
 
 
@@ -849,9 +858,14 @@ function capituloAnterior(){
 
   if(capituloActual > 0){
 
-    capituloActual--;
+    sonidoAnterior();
 
-    renderCapitulos();
+    setTimeout(() => {
+
+      capituloActual--;
+      renderCapitulos();
+
+    }, 250);
 
   }
 }
@@ -860,9 +874,14 @@ function capituloSiguiente(){
 
   if(capituloActual < data.capitulos.length - 1){
 
-    capituloActual++;
+    sonidoSiguiente();
 
-    renderCapitulos();
+    setTimeout(() => {
+
+      capituloActual++;
+      renderCapitulos();
+
+    }, 250);
 
   }
 }
@@ -1093,8 +1112,40 @@ function entrarCampamento(){
   }
 }
 
+function sonidoSiguiente(){
 
+  const a =
+    document.getElementById("audioSiguiente");
 
+  a.currentTime = 0;
+  a.volume = 0.4;
+  a.play();
+}
+
+function sonidoAnterior(){
+
+  const a =
+    document.getElementById("audioAnterior");
+
+  a.currentTime = 0;
+  a.volume = 0.4;
+  a.play();
+}
+
+  function irCapitulo(i){
+
+  sonidoSiguiente();
+
+  setTimeout(() => {
+
+    capituloActual = i;
+    renderCapitulos();
+
+  }, 250);
+
+}
+
+  
 </script>
 </body>
 </html> 
