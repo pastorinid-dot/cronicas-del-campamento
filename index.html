@@ -660,6 +660,17 @@ input, textarea, select {
 
 <script>
   
+data.libros = [
+  {
+    titulo: "Manual del Errante",
+    archivo: "assets/libros/manual.pdf"
+  },
+  {
+    titulo: "Bestiario del Norte",
+    archivo: "assets/libros/bestiario.pdf"
+  }
+];
+  
 let data = {
   capitulos: [],
   personajes: [],
@@ -1275,16 +1286,7 @@ function sonidoCerrarInventario(){
   a.play();
 }
 
-data.libros = [
-  {
-    titulo: "Manual del Errante",
-    archivo: "assets/libros/manual.pdf"
-  },
-  {
-    titulo: "Bestiario del Norte",
-    archivo: "assets/libros/bestiario.pdf"
-  }
-];
+
 
   function renderBiblioteca(){
 
