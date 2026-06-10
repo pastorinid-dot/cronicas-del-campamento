@@ -569,6 +569,40 @@ input, textarea, select {
 
     </div>
 
+
+     
+<!-- asdasdasd -->
+     <div id="visorLibro"
+     class="oculto"
+     style="
+       margin-top:20px;
+       background:#2b1a16;
+       border:3px solid #8d6e63;
+       border-radius:12px;
+       padding:10px;
+     ">
+
+  <button class="btn"
+          onclick="cerrarLibro()"
+          style="margin-bottom:10px;">
+    ❌ Cerrar Libro
+  </button>
+
+  <iframe id="pdfViewer"
+          width="100%"
+          height="800"
+          style="
+            border:none;
+            border-radius:10px;
+            background:white;
+          ">
+  </iframe>
+
+</div>
+<!-- asdasdasd -->
+
+
+     
   </div>
 </div>
 
@@ -1246,7 +1280,7 @@ function sonidoCerrarInventario(){
 
 
   
-function abrirLibro(nombre, pdf){
+function abrirLibrod(nombre, pdf){
 
   const leer = confirm(
     `¿Deseas leer "${nombre}"?`
@@ -1257,6 +1291,30 @@ function abrirLibro(nombre, pdf){
   }
 
 }
+
+function abrirLibro(nombre,pdf){
+
+  const leer =
+    confirm(`¿Deseas leer "${nombre}"?`);
+
+  if(!leer) return;
+
+  document.getElementById("visorLibro")
+    .classList.remove("oculto");
+
+  document.getElementById("pdfViewer")
+    .src = pdf;
+}
+
+function cerrarLibro(){
+
+  document.getElementById("visorLibro")
+    .classList.add("oculto");
+
+  document.getElementById("pdfViewer")
+    .src = "";
+}
+
   
   
 </script>
