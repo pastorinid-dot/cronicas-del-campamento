@@ -562,24 +562,19 @@ input, textarea, select {
     📚 Biblioteca Arcana
   </h2>
 
-   <div style="
-  display:flex;
-  justify-content:center;
-  gap:50px;
-  flex-wrap:wrap;
-  padding:40px 0;
+   <<div style="
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:120px;
+  padding:40px 20px;
+  align-items:start;
 ">
 
     <div class="libro-biblioteca"
          onclick="abrirLibro('El Diario de Thalion','assets/libros/thalion.pdf')">
 
        <img src="assets/libros/libro1.png"
-       style="
-         width:120px;
-         display:block;
-         margin:auto;
-         cursor:pointer;
-       ">
+       style="width:120px; cursor:pointer; display:block; margin:auto;">
 
   <h3 style="text-align:center;">
     El Diario de Thalion
@@ -591,12 +586,7 @@ input, textarea, select {
          onclick="abrirLibro('Bestiario del Norte','assets/libros/bestiario.pdf')">
 
       <img src="assets/libros/libro2.png"
-           style="
-         width:120px;
-         display:block;
-         margin:auto;
-         cursor:pointer;
-       ">
+        style="width:120px; cursor:pointer; display:block; margin:auto;">
 
   <h3 style="text-align:center;">
         Bestiario del Norte
