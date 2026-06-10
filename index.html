@@ -433,38 +433,88 @@ input, textarea, select {
   
 @keyframes vueloHada {
 
+  @keyframes volarHada {
+
   0%{
     left:243px;
     top:488px;
-    transform:scale(0.5) rotate(-25deg);
-    
+    transform:scale(0.5) rotate(-20deg);
   }
 
-  25%{
-    left:366px;
-    top:336px;
-    transform:scale(0.5) rotate(-5deg);
-  }
-
-  50%{
-    left:627px;
-    top:286px;
-    transform:scale(0.5) rotate(10deg);
-  }
-
-  75%{
-    left:450px;
-    top:440px;
+  8%{
+    left:260px;
+    top:450px;
     transform:scale(0.5) rotate(-10deg);
   }
 
-  100%{
-  left:454px;
-  top:445px;
-  transform:scale(0.5);
-  opacity:0;
-}
+  15%{
+    left:300px;
+    top:470px;
+    transform:scale(0.5) rotate(15deg);
+  }
 
+  22%{
+    left:330px;
+    top:380px;
+    transform:scale(0.5) rotate(-25deg);
+  }
+
+  30%{
+    left:366px;
+    top:336px;
+    transform:scale(0.5) rotate(-10deg);
+  }
+
+  38%{
+    left:420px;
+    top:310px;
+    transform:scale(0.5) rotate(5deg);
+  }
+
+  45%{
+    left:520px;
+    top:340px;
+    transform:scale(0.5) rotate(20deg);
+  }
+
+  55%{
+    left:627px;
+    top:286px;
+    transform:scale(0.5) rotate(-15deg);
+  }
+
+  65%{
+    left:710px;
+    top:330px;
+    transform:scale(0.5) rotate(20deg);
+  }
+
+  75%{
+    left:692px;
+    top:360px;
+    transform:scale(0.5) rotate(35deg);
+  }
+
+  85%{
+    left:600px;
+    top:390px;
+    transform:scale(0.5) rotate(15deg);
+  }
+
+  99%{
+    left:517px;
+    top:411px;
+    transform:scale(0.5) rotate(0deg);
+    
+  }
+
+  100%{
+    left:517px;
+    top:411px;
+    transform:scale(0.5) rotate(0deg);
+    opacity:0;
+    
+  }
 }
 
   
@@ -1409,7 +1459,7 @@ const hada =
   document.getElementById("hada");
 
 hada.style.animation =
-  "vueloHada 1s ease-in-out forwards";
+  "vueloHada 3s ease-in-out forwards";
 
   
 
