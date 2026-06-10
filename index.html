@@ -1269,7 +1269,7 @@ function sonidoCerrarInventario(){
 
 
   
-function abrirLibros(nombre, pdf){
+function abrirLibro(nombre, pdf){
 
   const leer = confirm(
     `¿Deseas leer "${nombre}"?`
@@ -1283,19 +1283,7 @@ function abrirLibros(nombre, pdf){
 
 
 
-  function abrirLibro(nombre,pdf){
-
-  if(confirm(`¿Deseas leer "${nombre}"?`)){
-
-    mostrarTab('biblioteca');
-
-    document.getElementById("visorPDF")
-      .classList.remove("oculto");
-
-    document.getElementById("pdfFrame")
-      .src = pdf;
-  }
-}
+ 
 
   
   
