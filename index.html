@@ -621,7 +621,9 @@ let capituloActual = 0;
   
 
 async function iniciarCarga(){
-
+document.querySelector(".fondo").style.backgroundImage =
+  "url('assets/fondo.jpg')";
+  
   try{
     data.capitulos =
       await fetch("data/historias.json")
