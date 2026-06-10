@@ -425,95 +425,8 @@ input, textarea, select {
   filter:drop-shadow(0 0 15px rgba(255,140,0,.4));
 }
 
+ 
 
-
-
-
-
-  
-@keyframes vueloHada {
-
-   0%{
-    left:243px;
-    top:488px;
-    transform:scale(0.5) rotate(-20deg);
-  }
-
-  8%{
-    left:260px;
-    top:450px;
-    transform:scale(0.5) rotate(-10deg);
-  }
-
-  15%{
-    left:300px;
-    top:470px;
-    transform:scale(0.5) rotate(15deg);
-  }
-
-  22%{
-    left:330px;
-    top:380px;
-    transform:scale(0.5) rotate(-25deg);
-  }
-
-  30%{
-    left:366px;
-    top:336px;
-    transform:scale(0.5) rotate(-10deg);
-  }
-
-  38%{
-    left:420px;
-    top:310px;
-    transform:scale(0.5) rotate(5deg);
-  }
-
-  45%{
-    left:520px;
-    top:340px;
-    transform:scale(0.5) rotate(20deg);
-  }
-
-  55%{
-    left:627px;
-    top:286px;
-    transform:scale(0.5) rotate(-15deg);
-  }
-
-  65%{
-    left:710px;
-    top:330px;
-    transform:scale(0.5) rotate(20deg);
-  }
-
-  75%{
-    left:692px;
-    top:360px;
-    transform:scale(0.5) rotate(35deg);
-  }
-
-  85%{
-    left:600px;
-    top:390px;
-    transform:scale(0.5) rotate(15deg);
-  }
-
-  99%{
-    left:517px;
-    top:411px;
-    transform:scale(0.5) rotate(0deg);
-    
-  }
-
-  100%{
-    left:517px;
-    top:411px;
-    transform:scale(0.5) rotate(0deg);
-    opacity:0;
-    
-  }
-}
 
   
   
@@ -602,20 +515,6 @@ input, textarea, select {
       "La noche es fría, únete junto al fuego...<br>
       Te contaré una historia."
     </p>
-    <!-- hada -->
-    
-    <img
-  id="hada"
-  src="assets/hada.png"
-  style="
-    position:fixed;
-    width:90px;
-    z-index:9998;
-    bottom:-120px;
-    left:10%;
-    pointer-events:none;
-  ">
- <!-- hada -->
     
     <button class="btn"
         style="font-size: 1.5rem; padding: 15px 40px;"
@@ -1448,18 +1347,6 @@ function abrirLibro(nombre, pdf){
 }
 
 
-
-
-
-
-
-const hada =
-  document.getElementById("hada");
-
-hada.style.animation =
-  "vueloHada 3s ease-in-out forwards";
-
-  
 
   
   
