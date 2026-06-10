@@ -412,6 +412,29 @@ input, textarea, select {
   transform:scale(1.1);
 }
 
+
+
+
+
+
+
+  .libro-biblioteca{
+  text-align:center;
+  transition:.3s;
+}
+
+.libro-biblioteca:hover{
+  transform:scale(1.08);
+}
+
+.libro-biblioteca img{
+  filter:drop-shadow(0 0 15px rgba(255,140,0,.4));
+}
+
+
+
+
+  
   
 </style>
 </head>
@@ -548,12 +571,17 @@ input, textarea, select {
     <div class="libro-biblioteca"
          onclick="abrirLibro('El Diario de Thalion','assets/libros/thalion.pdf')">
 
-      <img src="assets/libros/libro1.png"
-           style="width:100%; cursor:pointer;">
+      < <img src="assets/libros/libro1.png"
+       style="
+         width:120px;
+         display:block;
+         margin:auto;
+         cursor:pointer;
+       ">
 
-      <h3 style="text-align:center;">
-        El Diario de Thalion
-      </h3>
+  <h3 style="text-align:center;">
+    El Diario de Thalion
+  </h3>
 
     </div>
 
@@ -561,9 +589,14 @@ input, textarea, select {
          onclick="abrirLibro('Bestiario del Norte','assets/libros/bestiario.pdf')">
 
       <img src="assets/libros/libro2.png"
-           style="width:100%; cursor:pointer;">
+           style="
+         width:120px;
+         display:block;
+         margin:auto;
+         cursor:pointer;
+       ">
 
-      <h3 style="text-align:center;">
+  <h3 style="text-align:center;">
         Bestiario del Norte
       </h3>
 
