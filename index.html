@@ -595,16 +595,22 @@ input, textarea, select {
     z-index:0;
   "></div>
 
-  <!-- Volo -->
-  <img src="assets/volo.png"
-       style="
-         position:absolute;
-         bottom:0;
-         left:50%;
-         transform:translateX(-50%);
-         height:400px;
-         z-index:2;
-       ">
+  <div class="volo-wrapper">
+  <img src="assets/volo.png">
+    .volo-wrapper{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+}
+
+.volo-wrapper img{
+  height:400px;
+  display:block;
+}
+</div>
+  
 
   <!-- dialogo -->
   <div style="
