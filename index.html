@@ -18,7 +18,31 @@ body { background: #000; color: #ffd54f; font-family: 'MedievalSharp', cursive; 
   background-position: center;
 }
 
+  
+@keyframes aparecerLibro {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
+@keyframes abrirLibro {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+  
+  
 
 @keyframes parpadeo {
  0%, 100% { opacity: 0.6; }
@@ -595,21 +619,7 @@ input, textarea, select {
     z-index:0;
   "></div>
 
-  <div class="volo-wrapper">
-  <img src="assets/volo.png">
-    .volo-wrapper{
-  position:absolute;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:10;
-}
-
-.volo-wrapper img{
-  height:400px;
-  display:block;
-}
-</div>
+  
   
 
   <!-- dialogo -->
@@ -1280,8 +1290,9 @@ data.libros = [
 
   const cont = document.getElementById("librosContainer");
 
-  cont.innerHTML = data.libros.map(l => `
-    <div onclick="abrirLibro('${l.archivo}')"
+  cont.innerHTML = data.libros.map((l, i) => `
+    <div class="libro-item"
+         onclick="abrirLibro('${l.archivo}')"
          style="
            width:140px;
            height:180px;
@@ -1295,11 +1306,16 @@ data.libros = [
            text-align:center;
            color:#ffd54f;
            font-family:Cinzel;
-           transition:0.3s;
            box-shadow:0 0 10px rgba(0,0,0,0.6);
+           opacity:0;
+           transform:translateY(20px);
+           animation: aparecerLibro 0.4s ease forwards;
+           animation-delay:${i * 120}ms;
          "
-         onmouseover="this.style.transform='scale(1.1); box-shadow:0 0 20px #ff6f00'"
-         onmouseout="this.style.transform='scale(1)'">
+         onmouseover="this.style.transform='scale(1.1)'
+                      ; this.style.boxShadow='0 0 20px #ff6f00'"
+         onmouseout="this.style.transform='scale(1)'
+                     ; this.style.boxShadow='0 0 10px rgba(0,0,0,0.6)'">
 
       📖<br>${l.titulo}
 
@@ -1307,18 +1323,19 @@ data.libros = [
   `).join('');
 }
 
-  function abrirLibro(url){
+ function abrirLibro(url){
 
   const modal = document.createElement("div");
 
   modal.style = `
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,0.9);
+    background:rgba(0,0,0,0.92);
     z-index:99999;
     display:flex;
     align-items:center;
     justify-content:center;
+    animation: fadeIn 0.2s ease;
   `;
 
   modal.innerHTML = `
@@ -1328,6 +1345,8 @@ data.libros = [
       background:#1a0f0d;
       border:2px solid #ff6f00;
       position:relative;
+      box-shadow:0 0 30px rgba(255,111,0,0.3);
+      animation: abrirLibro 0.3s ease;
     ">
 
       <button onclick="this.parentElement.parentElement.remove()"
@@ -1344,7 +1363,7 @@ data.libros = [
       </button>
 
       <iframe src="${url}"
-              style="width:100%; height:100%;"></iframe>
+              style="width:100%; height:100%; border:none;"></iframe>
 
     </div>
   `;
