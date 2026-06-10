@@ -555,7 +555,21 @@ input, textarea, select {
       "La noche es fría, únete junto al fuego...<br>
       Te contaré una historia."
     </p>
-   
+    <!-- hada -->
+    
+    <img
+  id="hada"
+  src="assets/hada.png"
+  style="
+    position:fixed;
+    width:90px;
+    z-index:9998;
+    bottom:-120px;
+    left:10%;
+    pointer-events:none;
+  ">
+ <!-- hada -->
+    
     <button class="btn"
         style="font-size: 1.5rem; padding: 15px 40px;"
         onclick="entrarCampamento()">
@@ -685,12 +699,7 @@ input, textarea, select {
 
     </div>
 
-
-
-
-
-
-     
+    
 
 
      <div id="visorPDF" class="oculto">
@@ -701,19 +710,10 @@ input, textarea, select {
     style="border:none;">
   </iframe>
 </div>
-
-
-
-
-
-
-     
-
-
+  
      
   </div>
 </div>
-
 
 
 
@@ -724,9 +724,7 @@ input, textarea, select {
     <!-- PERSONAJES -->
     <div id="tab-personajes" class="pergamino oculto" style="max-width: 900px; margin: 0 auto;">
       <h2 class="titulo-baldur" style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">⚔️ Compañeros de Fogata</h2>
-
      
-
       <div id="listaPersonajes" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;"></div>
     </div>
 
@@ -773,23 +771,7 @@ input, textarea, select {
 
 <div id="tooltip"></div>
 
-      
-      <!-- hada -->
-    
-    <img
-  id="hada"
-  src="assets/hada.png"
-  style="
-    position:fixed;
-    width:90px;
-    z-index:9998;
-    bottom:-120px;
-    left:10%;
-    pointer-events:none;
-  ">
- <!-- hada -->
-
-      
+             
 
 
 <script>
