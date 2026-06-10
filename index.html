@@ -434,6 +434,63 @@ input, textarea, select {
 
 
 
+
+
+  <!-- Hada -->
+#hadaInicio{
+  position:absolute;
+
+  width:120px;
+
+  left:50%;
+  transform:translateX(-50%);
+
+  bottom:-200px;
+
+  animation:
+    aparecerHada 5s ease-out forwards,
+    flotar 3s ease-in-out infinite 5s;
+
+  filter:
+    drop-shadow(0 0 20px #7fffd4);
+}
+
+@keyframes aparecerHada{
+
+  from{
+    bottom:-200px;
+    opacity:0;
+    transform:
+      translateX(-50%)
+      scale(.5);
+  }
+
+  to{
+    bottom:120px;
+    opacity:1;
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+}
+
+@keyframes flotar{
+
+  0%,100%{
+    transform:
+      translateX(-50%)
+      translateY(0px);
+  }
+
+  50%{
+    transform:
+      translateX(-50%)
+      translateY(-15px);
+  }
+}
+
+  <!-- Hada -->
+
   
   
 </style>
@@ -521,6 +578,19 @@ input, textarea, select {
       "La noche es fría, únete junto al fuego...<br>
       Te contaré una historia."
     </p>
+
+
+
+<!-- hada -->
+    
+    <img id="hadaInicio"
+     src="assets/hada.png">
+ <!-- hada -->
+
+
+
+
+    
     <button class="btn"
         style="font-size: 1.5rem; padding: 15px 40px;"
         onclick="entrarCampamento()">
@@ -1366,6 +1436,44 @@ function abrirLibro(nombre, pdf){
 }
 
 
+
+
+
+
+
+
+
+  setInterval(() => {
+
+  const hada =
+    document.getElementById("hadaInicio");
+
+  const chispa =
+    document.createElement("div");
+
+  chispa.className = "spark";
+
+  chispa.style.left =
+    (hada.offsetLeft + 60) + "px";
+
+  chispa.style.top =
+    (hada.offsetTop + 40) + "px";
+
+  chispa.style.setProperty(
+    "--x",
+    (Math.random()*100-50)+"px"
+  );
+
+  chispa.style.setProperty(
+    "--y",
+    (-Math.random()*100)+"px"
+  );
+
+  document.body.appendChild(chispa);
+
+  setTimeout(() => chispa.remove(), 1000);
+
+}, 300);
 
  
 
