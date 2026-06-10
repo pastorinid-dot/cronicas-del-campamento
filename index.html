@@ -530,6 +530,7 @@ input, textarea, select {
       <button class="btn" onclick="mostrarTab('personajes')">🛡️ Personajes</button>
       <button class="btn" onclick="mostrarTab('mapa')">🗺️ Mapa</button>
       <button class="btn" onclick="mostrarTab('biblioteca')">📚 Biblioteca</button>
+      <button class="btn" onclick="mostrarTab('logros')">🏆 Logros</button>
       <button class="btn" onclick="mostrarTab('inicio')">🏕️ Campamento</button>
       
     </nav>
@@ -644,8 +645,7 @@ input, textarea, select {
   </h3>
 
     </div>
-
-    
+   
 
 
      <div id="visorPDF" class="oculto">
@@ -661,6 +661,30 @@ input, textarea, select {
   </div>
 </div>
 
+
+
+    
+    <!-- LOGROS -->
+<div id="tab-logros"
+     class="oculto"
+     style="
+       max-width:1200px;
+       margin:0 auto;
+       min-height:800px;
+     ">
+
+  <h2 class="titulo-baldur"
+      style="
+        text-align:center;
+        font-size:3rem;
+        margin-bottom:30px;
+      ">
+    🏆 Logros
+  </h2>
+
+</div>
+
+    
 
 
 
@@ -933,7 +957,7 @@ function mostrarTab(tab) {
   document.getElementById('inicio').classList.toggle('oculto', tab!== 'inicio');
   document.getElementById('app').classList.toggle('oculto', tab === 'inicio');
 
-  ['capitulos','personajes','mapa','biblioteca'].forEach(t => {
+ ['capitulos','personajes','mapa','biblioteca','logros'].forEach(t => {
   document.getElementById('tab-'+t).classList.toggle('oculto', t!== tab);
 });
 
@@ -1326,12 +1350,21 @@ function sonidoCerrarInventario(){
   const fondo = document.querySelector(".fondo");
 
   if(tab === "biblioteca"){
-    fondo.style.backgroundImage = "url('assets/fondo2.jpeg')";
-  } else {
-    fondo.style.backgroundImage = "url('assets/fondo.jpg')";
+    fondo.style.backgroundImage =
+      "url('assets/fondo2.jpeg')";
+  }
+
+  else if(tab === "logros"){
+    fondo.style.backgroundImage =
+      "url('assets/fondo3.png')";
+  }
+
+  else{
+    fondo.style.backgroundImage =
+      "url('assets/fondo.jpg')";
   }
 }
-
+  
 
   
 function abrirLibro(nombre, pdf){
