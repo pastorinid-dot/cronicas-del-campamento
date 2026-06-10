@@ -539,8 +539,36 @@ input, textarea, select {
     📚 Biblioteca Arcana
   </h2>
 
-  <div class="card">
-    Bienvenido a la biblioteca... aquí reposan antiguos conocimientos.
+   <div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+  ">
+
+    <div class="libro-biblioteca"
+         onclick="abrirLibro('El Diario de Thalion','libros/thalion.pdf')">
+
+      <img src="assets/libros/libro1.png"
+           style="width:100%; cursor:pointer;">
+
+      <h3 style="text-align:center;">
+        El Diario de Thalion
+      </h3>
+
+    </div>
+
+    <div class="libro-biblioteca"
+         onclick="abrirLibro('Bestiario del Norte','libros/bestiario.pdf')">
+
+      <img src="assets/libros/libro2.png"
+           style="width:100%; cursor:pointer;">
+
+      <h3 style="text-align:center;">
+        Bestiario del Norte
+      </h3>
+
+    </div>
+
   </div>
 </div>
 
@@ -1217,6 +1245,18 @@ function sonidoCerrarInventario(){
 }
 
 
+  
+function abrirLibro(nombre, pdf){
+
+  const leer = confirm(
+    `¿Deseas leer "${nombre}"?`
+  );
+
+  if(leer){
+    window.open(pdf, "_blank");
+  }
+
+}
   
   
 </script>
