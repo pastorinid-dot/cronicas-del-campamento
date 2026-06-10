@@ -437,58 +437,41 @@ input, textarea, select {
 
 
   <!-- Hada -->
-#hadaInicio{
-  position:absolute;
+@keyframes vueloHada {
 
-  width:120px;
+  0%{
+    bottom:-120px;
+    left:10%;
+    transform:rotate(-10deg);
+  }
 
-  left:50%;
-  transform:translateX(-50%);
+  20%{
+    bottom:150px;
+    left:25%;
+  }
 
-  bottom:-200px;
+  40%{
+    bottom:280px;
+    left:45%;
+  }
 
-  animation:
-    aparecerHada 5s ease-out forwards,
-    flotar 3s ease-in-out infinite 5s;
+  60%{
+    bottom:180px;
+    left:65%;
+  }
 
-  filter:
-    drop-shadow(0 0 20px #7fffd4);
+  80%{
+    bottom:250px;
+    left:50%;
+  }
+
+  100%{
+    bottom:350px;
+    left:50%;
+    transform:scale(1);
+  }
+
 }
-
-@keyframes aparecerHada{
-
-  from{
-    bottom:-200px;
-    opacity:0;
-    transform:
-      translateX(-50%)
-      scale(.5);
-  }
-
-  to{
-    bottom:120px;
-    opacity:1;
-    transform:
-      translateX(-50%)
-      scale(1);
-  }
-}
-
-@keyframes flotar{
-
-  0%,100%{
-    transform:
-      translateX(-50%)
-      translateY(0px);
-  }
-
-  50%{
-    transform:
-      translateX(-50%)
-      translateY(-15px);
-  }
-}
-
   <!-- Hada -->
 
   
@@ -578,19 +561,7 @@ input, textarea, select {
       "La noche es fría, únete junto al fuego...<br>
       Te contaré una historia."
     </p>
-
-
-
-<!-- hada -->
-    
-    <img id="hadaInicio"
-     src="assets/hada.png">
- <!-- hada -->
-
-
-
-
-    
+   
     <button class="btn"
         style="font-size: 1.5rem; padding: 15px 40px;"
         onclick="entrarCampamento()">
@@ -807,6 +778,24 @@ input, textarea, select {
 
 
 <div id="tooltip"></div>
+
+      
+      <!-- hada -->
+    
+    <img
+  id="hada"
+  src="assets/hada.png"
+  style="
+    position:fixed;
+    width:90px;
+    z-index:9998;
+    bottom:-120px;
+    left:10%;
+    pointer-events:none;
+  ">
+ <!-- hada -->
+
+      
 
 
 <script>
@@ -1441,41 +1430,13 @@ function abrirLibro(nombre, pdf){
 
 
 
+const hada =
+  document.getElementById("hada");
 
+hada.style.animation =
+  "vueloHada 6s ease-in-out forwards";
 
-  setInterval(() => {
-
-  const hada =
-    document.getElementById("hadaInicio");
-
-  const chispa =
-    document.createElement("div");
-
-  chispa.className = "spark";
-
-  chispa.style.left =
-    (hada.offsetLeft + 60) + "px";
-
-  chispa.style.top =
-    (hada.offsetTop + 40) + "px";
-
-  chispa.style.setProperty(
-    "--x",
-    (Math.random()*100-50)+"px"
-  );
-
-  chispa.style.setProperty(
-    "--y",
-    (-Math.random()*100)+"px"
-  );
-
-  document.body.appendChild(chispa);
-
-  setTimeout(() => chispa.remove(), 1000);
-
-}, 300);
-
- 
+  
 
   
   
