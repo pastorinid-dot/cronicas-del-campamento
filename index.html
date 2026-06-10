@@ -667,8 +667,10 @@ document.querySelector(".fondo").style.backgroundImage =
   catch(e){
     console.error("mapa ERROR",e);
   }
-  
-// Fondo
+ 
+}
+
+  // Fondo
 function cambiarFondo(tab){
 
   const fondo = document.querySelector(".fondo");
@@ -678,7 +680,6 @@ function cambiarFondo(tab){
   } else {
     fondo.style.backgroundImage = "url('assets/fondo.jpg')";
   }
-}
 
 // Mapa
 document.getElementById("mapaImg").src =
