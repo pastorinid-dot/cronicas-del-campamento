@@ -13,7 +13,7 @@ body { background: #000; color: #ffd54f; font-family: 'MedievalSharp', cursive; 
 .fondo {
   position: fixed;
   inset: 0;
-  opacity: 0.4;
+  opacity: 0.65;
   background-size: cover;
   background-position: center;
 }
@@ -1352,11 +1352,13 @@ function sonidoCerrarInventario(){
   if(tab === "biblioteca"){
     fondo.style.backgroundImage =
       "url('assets/fondo2.jpeg')";
+    
   }
 
   else if(tab === "logros"){
     fondo.style.backgroundImage =
       "url('assets/fondo3.png')";
+    fondo.style.backgroundPosition = "center 80px";
   }
 
   else{
