@@ -4,11 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campamento</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=MedievalSharp&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #000; color: #ffd54f; font-family: 'MedievalSharp', cursive; overflow-x: hidden; }
+body {
+  background: #000;
+  color: #ffd54f;
+  font-family: 'MedievalSharp', cursive;
+  overflow-x: hidden;
+}
 
 .fondo {
   position: fixed;
@@ -18,24 +24,18 @@ body { background: #000; color: #ffd54f; font-family: 'MedievalSharp', cursive; 
   background-position: center;
 }
 
-  
-
-
-  
-  
-
+/* animaciones */
 @keyframes parpadeo {
  0%, 100% { opacity: 0.6; }
  50% { opacity: 0.9; filter: blur(70px); }
 }
-
-
 
 @keyframes subir {
  0% { transform: translateY(0) scale(1); opacity: 1; }
  100% { transform: translateY(-250px) scale(0); opacity: 0; }
 }
 
+/* pergamino */
 .pergamino {
   background: linear-gradient(135deg, #3e2723 0%, #5d4037 50%, #3e2723 100%);
   border: 3px solid #8d6e63;
@@ -52,34 +52,53 @@ body { background: #000; color: #ffd54f; font-family: 'MedievalSharp', cursive; 
 }
 
 nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 20px; }
+
 .btn {
-  padding: 12px 24px; border-radius: 12px; border: 2px solid #8d6e63;
-  background: #5d4037; color: #ffd54f; cursor: pointer; font-family: 'Cinzel';
-  font-size: 16px; transition: 0.2s;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid #8d6e63;
+  background: #5d4037;
+  color: #ffd54f;
+  cursor: pointer;
+  font-family: 'Cinzel';
+  font-size: 16px;
+  transition: 0.2s;
 }
+
 .btn:hover { background: #6d4c41; }
 .btn.activo { background: #8d6e63; color: #ffecb3; }
 
 input, textarea, select {
-  width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px;
-  background: #2e1a17; border: 2px solid #8d6e63; color: #ffecb3;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: #2e1a17;
+  border: 2px solid #8d6e63;
+  color: #ffecb3;
   font-family: 'MedievalSharp';
 }
 
 .card {
-  background: #3e2723; border-left: 4px solid #ff6f00;
-  padding: 15px; margin: 10px 0; border-radius: 8px;
+  background: #3e2723;
+  border-left: 4px solid #ff6f00;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
 }
 
 .oculto { display: none; }
 
 #mapaCanvas {
-  border: 4px solid #8d6e63; border-radius: 12px; cursor: crosshair; width: 100%;
+  border: 4px solid #8d6e63;
+  border-radius: 12px;
+  cursor: crosshair;
+  width: 100%;
 }
 
 #tooltip {
   position: fixed !important;
-  z-index: 2147483647 !important; /* máximo posible */
+  z-index: 2147483647 !important;
   display: none;
   background: #3e2723;
   color: #ffecb3;
@@ -89,6 +108,7 @@ input, textarea, select {
   pointer-events: none;
 }
 
+/* inventario */
 .item-inventario{
   position: relative;
   background: linear-gradient(135deg, #2b1a16, #3e2723);
@@ -97,1143 +117,118 @@ input, textarea, select {
   padding: 10px;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
 }
 
 .item-inventario:hover{
   transform: scale(1.03);
   border-color: #ff6f00;
-  box-shadow: 0 0 15px rgba(255,111,0,0.3);
 }
 
-.item-header{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.item-inventario img{
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 6px;
-  border: 1px solid #8d6e63;
-  background: #1a0f0d;
-}
-
-.item-nombre{
-  font-family: 'Cinzel', serif;
-  color: #ffd54f;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.item-cantidad{
-  color: #ffecb3;
-  font-size: 12px;
-}
-
-.desc{
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 0;
-  padding-left: 5px;
-  font-size: 12px;
-  color: #ffecb3;
-  border-left: 2px solid #ff6f00;
-  transition: all 0.35s ease;
-}
-
-/* estado abierto */
-.item-inventario.abierto .desc{
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 8px;
-}
-
-.libro{
-
-  max-width:800px;
-
-  margin:auto;
-
-  perspective:1000px;
-
-}
+/* libro */
+.libro{ max-width:800px; margin:auto; perspective:1000px; }
 
 .pagina{
-  animation: aparecerPagina .6s ease;
-  
-  position: relative;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #f4e4bc,
-      #e6d0a3
-    );
-
+  background: linear-gradient(to bottom,#f4e4bc,#e6d0a3);
   color:#2c1810;
-
   padding:50px;
-
   border-radius:10px;
-
   border:3px solid #8d6e63;
-
   min-height:500px;
-
-  box-shadow:
-    inset 0 0 30px rgba(0,0,0,.15),
-    0 0 25px rgba(0,0,0,.4);
-
-  transition:.3s;
-
-}
-  
-@keyframes aparecerPagina{
-
-  from{
-    opacity:0;
-    transform:translateX(20px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-}
-  
-.pagina::before{
-
-  content:'';
-
-  position:absolute;
-
-  top:15px;
-  left:15px;
-  right:15px;
-  bottom:15px;
-
-  border:1px solid rgba(120,80,40,.3);
-
-  pointer-events:none;
-
 }
 
-.pagina:hover{
-
-  transform:rotateY(-1deg);
-
-}
-
-.pagina::after{
-
-  content:'✦';
-
-  position:absolute;
-
-  bottom:15px;
-
-  right:25px;
-
-  font-size:24px;
-
-  color:rgba(90,50,20,.5);
-
-}
-
-.adorno-capitulo{
-
-  text-align:center;
-
-  font-size:24px;
-
-  color:#8b5a2b;
-
-  margin-bottom:25px;
-
-}
-
-.fecha-capitulo{
-
-  text-align:right;
-
-  font-style:italic;
-
-  opacity:.7;
-
-}
-
-.titulo-libro{
-
-  font-family:'Cinzel';
-
-  text-align:center;
-
-  font-size:2.2rem;
-
-  color:#5c2c06;
-
-  margin:20px 0 40px;
-
-  border-bottom:2px solid rgba(90,50,20,.3);
-
-  padding-bottom:15px;
-
-}
-
-.texto-libro{
-
-  line-height:1.9;
-
-  font-size:18px;
-
-  white-space:pre-wrap;
-
-}
-
-.controles-libro{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  margin-top:20px;
-
-}
-
-.item-indice{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  padding:12px 15px;
-
-  margin-bottom:5px;
-
-  background:#4a312a;
-
-  border-left:4px solid #b8860b;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-  color:#ffecb3;
-
-}
-
-.campfire {
-  position: relative;
-  width: 80px;
-  height: 120px;
-  margin-top: 20px;
-}
-
-.flame {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background: orange;
-  border-radius: 50%;
-  filter: blur(2px);
-  animation: fire 1.2s infinite ease-in-out;
-}
-
-.flame1 { animation-delay: 0s; }
-.flame2 { animation-delay: 0.2s; width: 30px; height: 30px; }
-.flame3 { animation-delay: 0.4s; width: 15px; height: 15px; }
-
-@keyframes fire {
-  0%   { transform: translate(-50%, 0) scale(1); opacity: 0.4; }
-  50%  { transform: translate(-50%, -20px) scale(1.3); opacity: 1; }
-  100% { transform: translate(-50%, -40px) scale(0.8); opacity: 0; }
-}
-.spark {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: gold;
-  border-radius: 50%;
-  animation: spark 1s ease-out forwards;
-}
-
-@keyframes spark {
-  0% { opacity: 1; transform: translate(0,0) scale(1); }
-  100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(0); }
-}
-
-
-.item-indice:hover{
-
-  background:#5c4033;
-
-  transform:translateX(5px);
-
-}
-
-@media(max-width: 768px) {
- .pergamino { margin: 10px; padding: 15px; }
- .titulo-baldur { font-size: 2rem!important; }
-}
-
-  #musicPlayer{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  z-index:9999;
-}
-
-#btnMusica{
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  border:none;
-  cursor:pointer;
-
-  font-size:24px;
-
-  background:#3e2723;
-  color:#ffd54f;
-
-  box-shadow:
-    0 0 15px rgba(255,140,0,.5);
-
-  transition:.3s;
-}
-
-#btnMusica:hover{
-  transform:scale(1.1);
-}
-
-  
+/* fuego */
+.campfire{ position: relative; width: 80px; height: 120px; }
 </style>
 </head>
+
 <body>
-  
-
-  
- <div id="musicPlayer">
-
-  <button id="btnMusica"
-          onclick="toggleMusica()">
-    🔊
-  </button>
-
-  <audio id="musicaFondo" loop>
-    <source src="assets/musica/taberna1.mp3" type="audio/mpeg">
-  </audio>
-
-   <audio id="audioSiguiente" preload="auto">
-  <source src="assets/sonidos/pagina-siguiente.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="audioAnterior" preload="auto">
-  <source src="assets/sonidos/pagina-anterior.mp3" type="audio/mpeg">
-</audio>
-<audio id="audioAbrirInventario" preload="auto">
-  <source src="assets/sonidos/abrir-bolsa.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="audioCerrarInventario" preload="auto">
-  <source src="assets/sonidos/cerrar-bolsa.mp3" type="audio/mpeg">
-</audio>
-   
-</div>
-
-
-
-  <div id="modalInventario"
-     class="oculto"
-     style="
-       position:fixed;
-       inset:0;
-       background:rgba(0,0,0,.8);
-       z-index:10000;
-     ">
-
-  <div class="pergamino"
-       style="
-         width:700px;
-         max-width:90%;
-         margin:50px auto;
-       ">
-
-    <h2 id="tituloInventario"></h2>
-
-    <div id="contenidoInventario"
-         style="
-           display:grid;
-           grid-template-columns:repeat(5,1fr);
-           gap:10px;
-         ">
-    </div>
-
-    <button class="btn"
-            onclick="cerrarInventario()">
-      Cerrar
-    </button>
-
-  </div>
-
-</div>
-
 
 <div class="fondo"></div>
 
-
-
-<div style="position: relative; z-index: 10; min-height: 100vh;">
-
-  <!-- PANTALLA INICIO -->
-  <div id="inicio" class="pergamino" style="max-width: 700px; margin: 100px auto; text-align: center;">
-    <h1 class="titulo-baldur" style="font-size: 3.5rem; margin-bottom: 20px;">Crónicas de ceniza y escarcha</h1>
-    <p style="font-size: 1.3rem; margin-bottom: 30px; color: #ffecb3;">
-      "La noche es fría, únete junto al fuego...<br>
-      Te contaré una historia."
-    </p>
-    <button class="btn"
-        style="font-size: 1.5rem; padding: 15px 40px;"
-        onclick="entrarCampamento()">
-  🔥 Entrar al Campamento
-</button>
-  </div>
-
-  <!-- APP PRINCIPAL -->
-  <div id="app" class="oculto">
-    <nav>
-      <button class="btn" onclick="mostrarTab('capitulos')">⚔️ Capítulos</button>
-      <button class="btn" onclick="mostrarTab('personajes')">🛡️ Personajes</button>
-      <button class="btn" onclick="mostrarTab('mapa')">🗺️ Mapa</button>
-      <button class="btn" onclick="mostrarTab('biblioteca')">📚 Biblioteca</button>
-      <button class="btn" onclick="mostrarTab('inicio')">🏕️ Campamento</button>
-      
-    </nav>
-
-   <!-- CAPITULOS -->
-<div id="tab-capitulos"
-     class="pergamino oculto"
-     style="max-width: 900px; margin: 0 auto;">
-
-  <h2 class="titulo-baldur"
-      style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">
-    📜 Relatos de un Errante
-  </h2>
-
-  <div id="listaCapitulos"></div>
-
+<div id="inicio" class="pergamino" style="max-width:700px;margin:100px auto;text-align:center;">
+  <h1 class="titulo-baldur">Crónicas de ceniza y escarcha</h1>
+  <button class="btn" onclick="entrarCampamento()">🔥 Entrar</button>
 </div>
 
-     
-    </div>
+<div id="app" class="oculto">
 
-    <!-- PERSONAJES -->
-    <div id="tab-personajes" class="pergamino oculto" style="max-width: 900px; margin: 0 auto;">
-      <h2 class="titulo-baldur" style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">⚔️ Compañeros de Fogata</h2>
+  <nav>
+    <button class="btn" onclick="mostrarTab('capitulos')">Capítulos</button>
+    <button class="btn" onclick="mostrarTab('personajes')">Personajes</button>
+    <button class="btn" onclick="mostrarTab('mapa')">Mapa</button>
+  </nav>
 
-     
+  <div id="tab-capitulos" class="pergamino oculto">
+    <h2 class="titulo-baldur">Relatos</h2>
+    <div id="listaCapitulos"></div>
+  </div>
 
-      <div id="listaPersonajes" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;"></div>
-    </div>
+  <div id="tab-personajes" class="pergamino oculto">
+    <h2 class="titulo-baldur">Compañeros</h2>
+    <div id="listaPersonajes"></div>
+  </div>
 
-    <!-- MAPA -->
-    <div id="tab-mapa" class="pergamino oculto" style="max-width: 1000px; margin: 0 auto;">
-      <h2 class="titulo-baldur" style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">🗺️ Mapa del Reino</h2>
-      <input id="ciudadNombre" placeholder="Nombre del lugar: 'Puerta de Baldur'...">
-      
-      <div class="pergamino">
-
-  <div style="position:relative;">
-
-    <img
-      id="mapaImg"
-      style="
-        width:100%;
-        border:4px solid #8d6e63;
-        border-radius:12px;
-        display:block;
-      ">
-
-    <canvas
-      id="mapaCanvas"
-      width="900"
-      height="450"
-      style="
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        z-index:10;
-        cursor:crosshair;
-      ">
-    </canvas>
-
+  <div id="tab-mapa" class="pergamino oculto">
+    <h2 class="titulo-baldur">Mapa</h2>
+    <img id="mapaImg">
+    <canvas id="mapaCanvas"></canvas>
   </div>
 
 </div>
-
-<!-- BIBLIOTECA -->
-<div id="tab-biblioteca" class="pergamino oculto" style="max-width: 1100px; margin: 0 auto; position: relative; min-height: 600px; overflow: visible;">
-
-  <h2 class="titulo-baldur" style="text-align:center; font-size:2.5rem;">
-    📚 Biblioteca Arcana
-  </h2>
-
-  <!-- fondo biblioteca -->
-  <div style="
-    position:absolute;
-    inset:0;
-    background:url('assets/fondo2.jpg') center/cover no-repeat;
-    opacity:0.35;
-    z-index:0;
-  "></div>
-
-  
-  
-  </div>
-
-
-
-<div id="tooltip"></div>
-
 
 <script>
-  
-
-  
+// ================= DATA =================
 let data = {
   capitulos: [],
   personajes: [],
   ciudades: [],
-  tiradas: [],
-    inventario: {}
+  inventario: {}
 };
-let tooltipActivo = null;
-let imgTemp = '';
-let assets = {};
+
 let capituloActual = 0;
-  
 
-  
-
+// ================= INIT =================
 async function iniciarCarga(){
+  data.capitulos = await fetch("data/historias.json").then(r=>r.json());
+  data.personajes = await fetch("data/personajes.json").then(r=>r.json());
+  data.inventario = await fetch("data/inventario.json").then(r=>r.json());
+  data.ciudades = await fetch("data/mapa.json").then(r=>r.json());
 
-  try{
-    data.capitulos =
-      await fetch("data/historias.json")
-      .then(r=>r.json());
+  document.querySelector(".fondo").style.backgroundImage = "url('assets/fondo.jpg')";
+  document.getElementById("mapaImg").src = "assets/mapa.jpg";
 
-    console.log("historias OK");
-  }
-  catch(e){
-    console.error("historias ERROR",e);
-  }
-
-  try{
-    data.personajes =
-      await fetch("data/personajes.json")
-      .then(r=>r.json());
-
-    console.log("personajes OK");
-  }
-  catch(e){
-    console.error("personajes ERROR",e);
-  }
-
-  try{
-    data.inventario =
-      await fetch("data/inventario.json")
-      .then(r=>r.json());
-
-    console.log("inventario OK");
-  }
-  catch(e){
-    console.error("inventario ERROR",e);
-  }
-
-  try{
-    data.ciudades =
-      await fetch("data/mapa.json")
-      .then(r=>r.json());
-
-    console.log("mapa OK");
-  }
-  catch(e){
-    console.error("mapa ERROR",e);
-  }
-  
-// Fondo
-document.querySelector(".fondo").style.backgroundImage =
-  "url('assets/fondo.jpg')";
-
-// Mapa
-document.getElementById("mapaImg").src =
-  "assets/mapa.jpg";
-  
-//Musica Volumen
-  const musica =
-  document.getElementById("musicaFondo");
-
-musica.volume = 0.10;
-
-  
   renderTodo();
 }
 
+// ================= NAV =================
+function mostrarTab(tab){
+  document.getElementById("inicio").classList.add("oculto");
+  document.getElementById("app").classList.remove("oculto");
 
-
-
-// Mapa
-const canvas = document.getElementById('mapaCanvas');
-const ctx = canvas.getContext('2d');
-function dibujarMapa() {
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  data.ciudades.forEach(c => {
-
-    ctx.fillStyle = c.actual ? "#ffd700" : "#ff5722";
-
-    ctx.beginPath();
-    ctx.arc(c.x, c.y, 8, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.strokeStyle = "#000";
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    ctx.font = "bold 12px Cinzel";
-    ctx.fillStyle = "#ffd54f";
-
-    ctx.strokeStyle = "#000";
-    ctx.lineWidth = 4;
-
-    ctx.strokeText(
-      c.nombre,
-      c.x + 12,
-      c.y + 5
-    );
-
-    ctx.fillText(
-      c.nombre,
-      c.x + 12,
-      c.y + 5
-    );
+  ["capitulos","personajes","mapa"].forEach(t=>{
+    document.getElementById("tab-"+t).classList.toggle("oculto", t!==tab);
   });
-
 }
 
-canvas.onclick = (e) => {
-
-  const rect = canvas.getBoundingClientRect();
-
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-
-  const x = (e.clientX - rect.left) * scaleX;
-  const y = (e.clientY - rect.top) * scaleY;
-
-  // Buscar si se hizo click sobre una ciudad
-  const ciudad = data.ciudades.find(c => {
-
-    const dx = c.x - x;
-    const dy = c.y - y;
-
-    return Math.sqrt(dx * dx + dy * dy) < 15;
-
-  });
-
-  if (ciudad) {
-
-  const opcion = prompt(
-    `"${ciudad.nombre}"\n\n` +
-    "1 = Ubicación actual\n" +
-    "2 = Eliminar"
-  );
-
-  if(opcion === "1"){
-
-    data.ciudades.forEach(c => c.actual = false);
-
-    ciudad.actual = true;
-
-  
-
-    dibujarMapa();
-  }
-
-  if(opcion === "2"){
-
-    if(confirm(`¿Eliminar "${ciudad.nombre}"?`)){
-
-      data.ciudades =
-        data.ciudades.filter(
-          c => c !== ciudad
-        );
-
-     
-
-      dibujarMapa();
-    }
-  }
-
-  return;
+// ================= START =================
+function entrarCampamento(){
+  mostrarTab("capitulos");
+  const m = document.getElementById("musicaFondo");
+  if(m) m.play();
 }
 
-  const nombre =
-    document.getElementById("ciudadNombre").value.trim();
+// ================= RENDER =================
+function renderTodo(){
+  document.getElementById("listaCapitulos").innerHTML =
+    data.capitulos.map(c=>`<div class="card">${c.titulo}</div>`).join("");
 
-  if (!nombre) {
-    alert("Poné nombre primero");
-    return;
-  }
-
- data.ciudades.push({
-  id: Date.now(),
-  nombre,
-  x,
-  y,
-  actual: false
-});
-
-
-
-  document.getElementById("ciudadNombre").value = "";
-
-  dibujarMapa();
-};
-
-
-// Navegación
-function mostrarTab(tab) {
-
-  const fondo = document.querySelector(".fondo");
-
-  fondo.style.backgroundImage =
-    tab === "biblioteca"
-      ? "url('assets/fondo2.jpg')"
-      : "url('assets/fondo.jpg')";
-
-  document.getElementById('inicio')
-    .classList.toggle('oculto', tab !== 'inicio');
-
-  document.getElementById('app')
-    .classList.toggle('oculto', tab === 'inicio');
-
-  const tabs = ['capitulos','personajes','mapa','biblioteca'];
-
-  tabs.forEach(t => {
-    const el = document.getElementById('tab-' + t);
-    if (el) el.classList.add('oculto');
-  });
-
-  const activo = document.getElementById('tab-' + tab);
-  if (activo) activo.classList.remove('oculto');
-
-  if (tab === 'mapa') setTimeout(dibujarMapa, 100);
-
-  if (tab === 'biblioteca') {
-    requestAnimationFrame(() => {
-      renderBiblioteca();
-    });
-  }
+  document.getElementById("listaPersonajes").innerHTML =
+    data.personajes.map(p=>`<div class="card">${p.nombre}</div>`).join("");
 }
-
-
-function renderCapitulos() {
-
-  if(data.capitulos.length === 0){
-    document.getElementById('listaCapitulos').innerHTML =
-
-    
-      '<div class="card">No hay capítulos.</div>';
-    return;
-  }
-
-  const c = data.capitulos[capituloActual];
-
-  document.getElementById('listaCapitulos').innerHTML = `
-    <button
-  class="btn"
-  onclick="toggleIndice()"
-  style="margin-bottom:15px;">
-  📖 Índice
-</button>
-
-<div id="indiceCapitulos" class="oculto"></div>
-
-    <div class="libro">
-
-      <div class="pagina">
-
-        <div class="fecha-capitulo">
-          ${c.fecha}
-        </div>
-
-        <h2 class="titulo-libro">
-  ${c.titulo}
-</h2>
-
-<div class="adorno-capitulo">
-  ✦ ✦ ✦
-</div>
-
-<div class="texto-libro">
-          ${c.desc.replace(/\n/g,'<br>')}
-        </div>
-
-      </div>
-
-      <div class="controles-libro">
-
-        <button
-          class="btn"
-          onclick="capituloAnterior()"
-          ${capituloActual===0 ? 'disabled':''}>
-          ⬅ Anterior
-        </button>
-
-        <span>
-          ${capituloActual+1}
-          /
-          ${data.capitulos.length}
-        </span>
-
-        <button
-          class="btn"
-          onclick="capituloSiguiente()"
-          ${capituloActual===data.capitulos.length-1 ? 'disabled':''}>
-          Siguiente ➡
-        </button>
-
-      </div>
-
-    </div>
-  `;
-}
-
-function capituloAnterior(){
-
-  if(capituloActual > 0){
-
-    sonidoAnterior();
-
-    setTimeout(() => {
-
-      capituloActual--;
-      renderCapitulos();
-
-    }, 250);
-
-  }
-}
-
-function capituloSiguiente(){
-
-  if(capituloActual < data.capitulos.length - 1){
-
-    sonidoSiguiente();
-
-    setTimeout(() => {
-
-      capituloActual++;
-      renderCapitulos();
-
-    }, 250);
-
-  }
-}
-
-function toggleIndice(){
-sonidoSiguiente();
-  const indice =
-    document.getElementById("indiceCapitulos");
-
-  if(indice.classList.contains("oculto")){
-
-    indice.innerHTML = data.capitulos
-      .map((c,i)=>`
-
-        <div
-          class="item-indice"
-          onclick="irCapitulo(${i})">
-
-          <span>
-            ${i+1}. ${c.titulo}
-          </span>
-
-          <span>
-            ${c.fecha}
-          </span>
-
-        </div>
-
-      `).join('');
-
-    indice.classList.remove("oculto");
-
-  }else{
-
-    indice.classList.add("oculto");
-
-  }
-}
-
-
-
-function renderPersonajes() {
-
-  document.getElementById('listaPersonajes').innerHTML =
-    data.personajes.map(p => `
-
-      <div class="card"
-  style="
-    position:relative;
-    display:flex;
-    gap:20px;
-    align-items:center;
-    ${p.estado === "muerto" ? "opacity:0.6; filter:grayscale(1);" : ""}
-  ">
-
-  ${p.estado === "muerto" 
-    ? `<div style="
-        position:absolute;
-        top:10px;
-        right:10px;
-        color:#b71c1c;
-        font-weight:bold;
-        font-size:14px;
-      "></div>`
-    : ""
-  }
-
-        <img
-          src="${p.img || ''}"
-          style="
-            width:140px;
-            height:140px;
-            object-fit:cover;
-            border-radius:12px;
-            border:3px solid #8d6e63;
-          ">
-
-        <div>
-
-          <h3 class="titulo-baldur"
-              style="font-size:1.5rem;">
-            ${p.nombre}
-          </h3>
-
-          <p>⚔️ ${p.clase}</p>
-
-          
-
-${p.estado === "muerto" 
-  ? `<p style="color:#b71c1c; font-weight:bold;">☠ CAÍDO</p>`
-  : `<p>⭐ Nivel ${p.nivel}</p>`
-}
-<img
-  src="assets/bolsa.png"
-  style="
-    width:50px;
-    cursor:pointer;
-    position:absolute;
-    right:10px;
-    bottom:10px;
-  "
-  onclick="abrirInventario('${p.nombre}')">
-        </div>
-
-      </div>
-
-    `).join('');
-}
-
-
-
-function limpiarMapa() {
-  data.ciudades = [];
-  dibujarMapa();
-}
-
-function renderTodo() {
-  renderCapitulos();
-  renderPersonajes();
- dibujarMapa();
-}
-
- 
-
- 
-function abrirInventario(nombre){
-  sonidoAbrirInventario();
-
-  const items =
-    data.inventario[nombre] || [];
-
-  document.getElementById("tituloInventario")
-    .innerText =
-      "🎒 Inventario de " + nombre;
-
-  document.getElementById("contenidoInventario")
-    .innerHTML =
-      items.map(item => `
-  <div class="item-inventario" onclick="toggleDesc(this)">
-
-    <div class="item-header">
-      <img src="${item.img || ''}">
-      <div>
-        <div class="item-nombre">${item.nombre}</div>
-        <div class="item-cantidad">x${item.cantidad}</div>
-      </div>
-    </div>
-
-    <div class="desc">
-      ${item.descripcion || "Sin descripción mágica..."}
-    </div>
-
-  </div>
-`).join('')
-
-  document.getElementById("modalInventario")
-    .classList.remove("oculto");
-}
-
-function cerrarInventario(){
-  sonidoCerrarInventario();
-  document.getElementById("modalInventario")
-    .classList.add("oculto");
-}
-
-
-function toggleDesc(el) {
-
-  const yaAbierto = el.classList.contains("abierto");
-
-  // cerrar todos
-  document.querySelectorAll(".item-inventario")
-    .forEach(i => i.classList.remove("abierto"));
-
-  // si no estaba abierto, lo abrimos
-  if (!yaAbierto) {
-    el.classList.add("abierto");
-  }
-}
-
 
 iniciarCarga();
-
-const musica =
-  document.getElementById("musicaFondo");
-
-function toggleMusica(){
-
-  if(musica.paused){
-
-    musica.play();
-
-    document.getElementById("btnMusica")
-      .innerHTML = "🔊";
-
-  }else{
-
-    musica.pause();
-
-    document.getElementById("btnMusica")
-      .innerHTML = "🔇";
-  }
-}
-
-function entrarCampamento(){
-
-  mostrarTab('capitulos');
-
-  const musica =
-    document.getElementById("musicaFondo");
-
-  if(musica){
-
-    musica.play()
-      .then(() => {
-        document.getElementById("btnMusica").innerHTML = "🔊";
-      })
-      .catch(err => {
-        console.log("Autoplay bloqueado:", err);
-      });
-
-  }
-}
-
-function sonidoSiguiente(){
-
-  const a =
-    document.getElementById("audioSiguiente");
-
-  a.currentTime = 0;
-  a.volume = 0.15;
-  a.play();
-}
-
-function sonidoAnterior(){
-
-  const a =
-    document.getElementById("audioAnterior");
-
-  a.currentTime = 0;
-  a.volume = 0.15;
-  a.play();
-}
-
-  function irCapitulo(i){
-
-  sonidoSiguiente();
-
-  setTimeout(() => {
-
-    capituloActual = i;
-    renderCapitulos();
-
-  }, 250);
-
-}
-function sonidoAbrirInventario(){
-
-  const a =
-    document.getElementById("audioAbrirInventario");
-
-  a.currentTime = 0;
-  a.volume = 0.15;
-  a.play();
-}
-
-function sonidoCerrarInventario(){
-
-  const a =
-    document.getElementById("audioCerrarInventario");
-
-  a.currentTime = 0;
-  a.volume = 0.15;
-  a.play();
-}
-
-
-
-  
-
-  
-  
 </script>
+
 </body>
-</html> 
+</html>
 
