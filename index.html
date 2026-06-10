@@ -511,6 +511,7 @@ input, textarea, select {
       <button class="btn" onclick="mostrarTab('capitulos')">⚔️ Capítulos</button>
       <button class="btn" onclick="mostrarTab('personajes')">🛡️ Personajes</button>
       <button class="btn" onclick="mostrarTab('mapa')">🗺️ Mapa</button>
+      <button class="btn" onclick="mostrarTab('biblioteca')">📚 Biblioteca</button>
       <button class="btn" onclick="mostrarTab('inicio')">🏕️ Campamento</button>
       
     </nav>
@@ -578,6 +579,23 @@ input, textarea, select {
 
 </div>
 
+
+
+
+      <!-- BIBLIOTECA -->
+<div id="tab-biblioteca" class="pergamino oculto" style="max-width: 900px; margin: 0 auto;">
+  <h2 class="titulo-baldur" style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">
+    📚 Biblioteca Arcana
+  </h2>
+
+  <div class="card">
+    Bienvenido a la biblioteca... aquí reposan antiguos conocimientos.
+  </div>
+</div>
+
+
+
+      
 
 
 
@@ -649,8 +667,16 @@ async function iniciarCarga(){
   }
   
 // Fondo
-document.querySelector(".fondo").style.backgroundImage =
-  "url('assets/fondo.jpg')";
+function cambiarFondo(tab){
+
+  const fondo = document.querySelector(".fondo");
+
+  if(tab === "biblioteca"){
+    fondo.style.backgroundImage = "url('assets/fondo2.jpg')";
+  } else {
+    fondo.style.backgroundImage = "url('assets/fondo.jpg')";
+  }
+}
 
 // Mapa
 document.getElementById("mapaImg").src =
@@ -795,13 +821,13 @@ function mostrarTab(tab) {
   document.getElementById('inicio').classList.toggle('oculto', tab!== 'inicio');
   document.getElementById('app').classList.toggle('oculto', tab === 'inicio');
 
-  ['capitulos','personajes','mapa'].forEach(t => {
-    document.getElementById('tab-'+t).classList.toggle('oculto', t!== tab);
-  });
+['capitulos','personajes','mapa','biblioteca'].forEach(t => {
+  document.getElementById('tab-'+t).classList.toggle('oculto', t!== tab);
+});
 
   if(tab === 'mapa') setTimeout(dibujarMapa, 100);
 }
-
+cambiarFondo(tab);
 
 
 function renderCapitulos() {
@@ -1179,6 +1205,22 @@ function sonidoCerrarInventario(){
   a.volume = 0.15;
   a.play();
 }
+
+function cambiarFondo(tab){
+
+  const fondo = document.querySelector(".fondo");
+
+  if(tab === "biblioteca"){
+    fondo.style.backgroundImage = "url('assets/fondo2.jpg')";
+  } else {
+    fondo.style.backgroundImage = "url('assets/fondo.jpg')";
+  }
+}
+
+
+  
+
+
   
 </script>
 </body>
