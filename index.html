@@ -571,6 +571,26 @@ input, textarea, select {
 
 
 
+
+
+
+     <div id="visorPDF" class="oculto">
+  <iframe
+    id="pdfFrame"
+    width="100%"
+    height="900px"
+    style="border:none;">
+  </iframe>
+</div>
+
+
+
+
+
+
+     
+
+
      
   </div>
 </div>
@@ -1249,7 +1269,7 @@ function sonidoCerrarInventario(){
 
 
   
-function abrirLibro(nombre, pdf){
+function abrirLibros(nombre, pdf){
 
   const leer = confirm(
     `¿Deseas leer "${nombre}"?`
@@ -1261,6 +1281,21 @@ function abrirLibro(nombre, pdf){
 
 }
 
+
+
+  function abrirLibro(nombre,pdf){
+
+  if(confirm(`¿Deseas leer "${nombre}"?`)){
+
+    mostrarTab('biblioteca');
+
+    document.getElementById("visorPDF")
+      .classList.remove("oculto");
+
+    document.getElementById("pdfFrame")
+      .src = pdf;
+  }
+}
 
   
   
