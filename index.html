@@ -19,27 +19,7 @@ body { background: #000; color: #ffd54f; font-family: 'MedievalSharp', cursive; 
 }
 
   
-@keyframes aparecerLibro {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-@keyframes abrirLibro {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
   
   
@@ -621,37 +601,7 @@ input, textarea, select {
 
   
   
-
-  <!-- dialogo -->
-  <div style="
-    position:absolute;
-    top:80px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#3e2723;
-    padding:15px 20px;
-    border:2px solid #ff6f00;
-    border-radius:12px;
-    z-index:3;
-    color:#ffecb3;
-    text-align:center;
-    max-width:400px;
-  ">
-    <p>📖 “¿Qué conocimiento buscas, viajero?”</p>
   </div>
-
-  <!-- libros -->
-  <div id="librosContainer" style="
-    position:absolute;
-    top:200px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:20px;
-    z-index:3;
-  "></div>
-
-</div>
 
 
 
@@ -660,16 +610,7 @@ input, textarea, select {
 
 <script>
   
-data.libros = [
-  {
-    titulo: "Manual del Errante",
-    archivo: "assets/libros/manual.pdf"
-  },
-  {
-    titulo: "Bestiario del Norte",
-    archivo: "assets/libros/bestiario.pdf"
-  }
-];
+
   
 let data = {
   capitulos: [],
@@ -1288,90 +1229,7 @@ function sonidoCerrarInventario(){
 
 
 
-  function renderBiblioteca(){
-
-  const cont = document.getElementById("librosContainer");
-
-  cont.innerHTML = data.libros.map((l, i) => `
-    <div class="libro-item"
-         onclick="abrirLibro('${l.archivo}')"
-         style="
-           width:140px;
-           height:180px;
-           background:#2e1a17;
-           border:2px solid #8d6e63;
-           border-radius:10px;
-           cursor:pointer;
-           display:flex;
-           align-items:center;
-           justify-content:center;
-           text-align:center;
-           color:#ffd54f;
-           font-family:Cinzel;
-           box-shadow:0 0 10px rgba(0,0,0,0.6);
-           opacity:0;
-           transform:translateY(20px);
-           animation: aparecerLibro 0.4s ease forwards;
-           animation-delay:${i * 120}ms;
-         "
-         onmouseover="this.style.transform='scale(1.1)'
-                      ; this.style.boxShadow='0 0 20px #ff6f00'"
-         onmouseout="this.style.transform='scale(1)'
-                     ; this.style.boxShadow='0 0 10px rgba(0,0,0,0.6)'">
-
-      📖<br>${l.titulo}
-
-    </div>
-  `).join('');
-}
-
- function abrirLibro(url){
-
-  const modal = document.createElement("div");
-
-  modal.style = `
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.92);
-    z-index:99999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    animation: fadeIn 0.2s ease;
-  `;
-
-  modal.innerHTML = `
-    <div style="
-      width:80%;
-      height:90%;
-      background:#1a0f0d;
-      border:2px solid #ff6f00;
-      position:relative;
-      box-shadow:0 0 30px rgba(255,111,0,0.3);
-      animation: abrirLibro 0.3s ease;
-    ">
-
-      <button onclick="this.parentElement.parentElement.remove()"
-        style="
-          position:absolute;
-          top:10px;
-          right:10px;
-          background:#ff6f00;
-          border:none;
-          padding:10px;
-          cursor:pointer;
-        ">
-        ✖
-      </button>
-
-      <iframe src="${url}"
-              style="width:100%; height:100%; border:none;"></iframe>
-
-    </div>
-  `;
-
-  document.body.appendChild(modal);
-}
+  
 
   
   
