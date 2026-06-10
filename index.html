@@ -563,15 +563,17 @@ input, textarea, select {
   </h2>
 
    <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-  ">
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
+  padding:40px 0;
+">
 
     <div class="libro-biblioteca"
          onclick="abrirLibro('El Diario de Thalion','assets/libros/thalion.pdf')">
 
-      < <img src="assets/libros/libro1.png"
+       <img src="assets/libros/libro1.png"
        style="
          width:120px;
          display:block;
