@@ -708,15 +708,15 @@ input, textarea, select {
       ">
     
   </h2>
-<img src="assets/logros/logo1.png" id="logro1" class="logro">
-<img src="assets/logros/logo2.png" id="logro2" class="logro">
-<img src="assets/logros/logo3.png" id="logro3" class="logro">
-<img src="assets/logros/logo4.png" id="logro4" class="logro">
+<img src="assets/logros/logo1.png" id="logro1" class="logro" style="left:440px; top:180px;">
+<img src="assets/logros/logo2.png" id="logro2" class="logro" style="left:600px; top:180px;">
+<img src="assets/logros/logo3.png" id="logro3" class="logro" style="left:765px; top:185px;">
+<img src="assets/logros/logo4.png" id="logro4" class="logro" style="left:280px; top:375px;">
 
-<img src="assets/logros/logo5.png" id="logro5" class="logro">
-<img src="assets/logros/logo6.png" id="logro6" class="logro">
-<img src="assets/logros/logo7.png" id="logro7" class="logro">
-<img src="assets/logros/logo8.png" id="logro8" class="logro">
+<img src="assets/logros/logo5.png" id="logro5" class="logro" style="left:435px; top:375px;">
+<img src="assets/logros/logo6.png" id="logro6" class="logro" style="left:605px; top:375px;">
+<img src="assets/logros/logo7.png" id="logro7" class="logro" style="left:770px; top:370px;">
+<img src="assets/logros/logo8.png" id="logro8" class="logro" style="left:930px; top:375px;">
 </div>
 
 
@@ -1418,28 +1418,8 @@ function abrirLibro(nombre, pdf){
 
 }
 
-
-
   
 
-let logro = document.getElementById("logro1");
-
-document.addEventListener("keydown",e=>{
-
- let left = parseInt(logro.style.left || 0);
- let top  = parseInt(logro.style.top  || 0);
-
- if(e.key==="ArrowLeft")  left-=5;
- if(e.key==="ArrowRight") left+=5;
- if(e.key==="ArrowUp")    top-=5;
- if(e.key==="ArrowDown")  top+=5;
-
- logro.style.left = left+"px";
- logro.style.top  = top+"px";
-
- console.clear();
- console.log(`left:${left}px; top:${top}px`);
-});
 
   
   
