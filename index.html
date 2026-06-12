@@ -380,6 +380,9 @@ input, textarea, select {
 
 }
 
+
+
+  
 @media(max-width: 768px) {
  .pergamino { margin: 10px; padding: 15px; }
  .titulo-baldur { font-size: 2rem!important; }
@@ -468,18 +471,27 @@ input, textarea, select {
     width:100%;
     height:100%;
 }
-.cartel-buscados{
+  
+#tab-buscados{
     position:relative;
-    left:50%;
-    top:30px;
-    transform:translateX(-50%);
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    aspect-ratio:16/9;
+    overflow:hidden;
+}
 
-    width:420px;
-    max-width:80%;
+.buscado{
+    position:absolute;
+    width:clamp(120px,16vw,220px);
+    transform:translate(-50%,-50%);
+    transition:.25s;
+    cursor:pointer;
+}
 
-    height:auto;
-
-    filter:drop-shadow(0 10px 20px rgba(0,0,0,.6));
+.buscado:hover{
+    transform:translate(-50%,-50%) scale(1.08);
+    filter:drop-shadow(0 0 25px rgba(255,210,120,.9));
 }
   
 
@@ -562,6 +574,26 @@ input, textarea, select {
   .logro:hover{
       transform:scale(1.08);
   }
+     #tab-buscados{
+        aspect-ratio:auto;
+        overflow:visible;
+        padding:20px;
+    }
+
+    .buscado{
+        position:relative !important;
+        left:auto !important;
+        top:auto !important;
+        transform:none !important;
+
+        width:220px;
+        display:block;
+        margin:20px auto;
+    }
+
+    .buscado:hover{
+        transform:scale(1.05);
+    }
     
     
 }
@@ -827,16 +859,16 @@ input, textarea, select {
   
  <div class="lista-logros">
   
-<img src="assets/logros/logo1.png" class="logro" style="left:36.7%; top:24%;">
-<img src="assets/logros/logo2.png" class="logro" style="left:50%; top:24%;">
-<img src="assets/logros/logo3.png" class="logro" style="left:63.8%; top:24%;">
+<img src="assets/logros/logo1.png" class="logro" style="left:36.7%; top:27%;">
+<img src="assets/logros/logo2.png" class="logro" style="left:50%; top:27%;">
+<img src="assets/logros/logo3.png" class="logro" style="left:63.8%; top:27%;">
 
-<img src="assets/logros/logo4.png" class="logro" style="left:23.3%; top:50%;">
+<img src="assets/logros/logo4.png" class="logro" style="left:23.3%; top:55%;">
 
-<img src="assets/logros/logo5.png" class="logro" style="left:36.2%; top:49%;">
-<img src="assets/logros/logo6.png" class="logro" style="left:50.4%; top:49%;">
-<img src="assets/logros/logo7.png" class="logro" style="left:64.2%; top:47%;">
-<img src="assets/logros/logo8.png" class="logro" style="left:77.5%; top:49%;">
+<img src="assets/logros/logo5.png" class="logro" style="left:36.2%; top:55%;">
+<img src="assets/logros/logo6.png" class="logro" style="left:50.4%; top:55%;">
+<img src="assets/logros/logo7.png" class="logro" style="left:64.2%; top:54%;">
+<img src="assets/logros/logo8.png" class="logro" style="left:77.5%; top:55%;">
 </div>
 </div>
 
@@ -845,8 +877,7 @@ input, textarea, select {
 
 
     <!-- BUSCADOS -->
-<div id="tab-buscados"
-     class="oculto"
+<div id="tab-buscados" class="oculto">
      style="
        max-width:1200px;
        margin:0 auto;
