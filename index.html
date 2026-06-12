@@ -511,32 +511,36 @@ input, textarea, select {
     width: 95% !important;
   }
       #tab-logros{
-           grid-template-columns: 1fr !important;
-    gap: 30px !important;
+      max-width:100%;
+      min-height:auto;
+      overflow:visible;
+      padding:20px;
   }
 
-.logros-bg{
-    display:none;
-}
+  .logros-bg{
+      display:none;
+  }
 
-     .lista-logros{
+  .lista-logros{
       display:flex;
       flex-direction:column;
       align-items:center;
       gap:25px;
   }
 
-.logro{
-      position:static !important;
-      left:auto !important;
-      top:auto !important;
+  .logro{
+      position:relative !important;
+      left:unset !important;
+      top:unset !important;
       transform:none !important;
-      width:120px;
+
+      width:130px;
+      display:block;
   }
 
-.logro:hover{
-    transform:scale(1.08);
-}
+  .logro:hover{
+      transform:scale(1.08);
+  }
     
     
 }
