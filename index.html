@@ -464,8 +464,6 @@ input, textarea, select {
 }
 
 
-  
-
 
   @media (max-width: 768px) {
 
@@ -516,26 +514,6 @@ input, textarea, select {
   height: auto;
 }
   
-
-
-
-
-  #tab-buscados{
-    position:relative;
-    width:100%;
-    max-width:1200px;
-    margin:0 auto;
-    aspect-ratio:16/9;
-    overflow:hidden;
-}
-
-.contenido-buscados{
-    position:relative;
-    z-index:2;
-}
-
-
-
   
 </style>
 </head>
@@ -813,12 +791,9 @@ input, textarea, select {
 <div id="tab-buscados"
      class="oculto"
      style="
-       position:relative;
-       width:100%;
        max-width:1200px;
        margin:0 auto;
-       aspect-ratio:16/9;
-       overflow:hidden;
+       min-height:800px;
      ">
 
   <h2 class="titulo-baldur"
@@ -827,10 +802,8 @@ input, textarea, select {
         font-size:3rem;
         margin-bottom:30px;
       ">
-
       </h2>
-
-   
+  
 </div>
 
 
@@ -1556,6 +1529,7 @@ function abrirLibro(nombre, pdf){
 </script>
 </body>
 </html>
+
 
 
 
