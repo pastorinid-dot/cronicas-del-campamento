@@ -463,16 +463,7 @@ input, textarea, select {
   z-index:0;
 }
 
-.buscados-bg{
-    position:absolute;
-    inset:0;
 
-    background-image:url("assets/fondo4.png");
-    background-size:100% 100%;
-    background-repeat:no-repeat;
-
-    z-index:0;
-}
   
 
 
@@ -525,6 +516,33 @@ input, textarea, select {
   height: auto;
 }
   
+
+
+
+
+  #tab-buscados{
+    position:relative;
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    aspect-ratio:16/9;
+    overflow:hidden;
+}
+
+.buscados-bg{
+    position:absolute;
+    inset:0;
+    background:url("assets/fondo4.png") center/100% 100% no-repeat;
+    z-index:0;
+}
+
+.contenido-buscados{
+    position:relative;
+    z-index:2;
+}
+
+
+
   
 </style>
 </head>
@@ -814,9 +832,8 @@ input, textarea, select {
         margin-bottom:30px;
       ">
 
-     <div class="buscados-bg"></div>
       </h2>
-  
+  <div class="buscados-bg"></div>
    
 </div>
 
