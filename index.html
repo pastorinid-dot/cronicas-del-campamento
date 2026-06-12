@@ -521,22 +521,26 @@ input, textarea, select {
       display:none;
   }
 
-  .lista-logros{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:25px;
-  }
+.lista-logros{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    justify-items:center;
+    align-items:center;
+    gap:25px;
+    margin:0 auto;
+}
 
-  .logro{
-      position:relative !important;
-      left:unset !important;
-      top:unset !important;
-      transform:none !important;
+ .logro{
+    position:relative !important;
+    left:auto !important;
+    top:auto !important;
+    transform:none !important;
 
-      width:130px;
-      display:block;
-  }
+    width:130px;
+    display:block;
+    margin:0 auto;
+}
 
   .logro:hover{
       transform:scale(1.08);
