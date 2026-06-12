@@ -473,27 +473,30 @@ input, textarea, select {
 }
   
 #tab-buscados{
-    position:relative;
-    width:100%;
     max-width:1200px;
     margin:0 auto;
-    aspect-ratio:16/9;
-    overflow:hidden;
+    padding:40px 20px;
+}
+
+.lista-buscados{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:80px 120px;
+    justify-items:center;
+    align-items:start;
 }
 
 .buscado{
-    position:absolute;
-    width:clamp(120px,16vw,220px);
-    transform:translate(-50%,-50%);
-    transition:.25s;
+    width:min(280px,100%);
     cursor:pointer;
+    transition:.3s;
+    filter:drop-shadow(0 0 15px rgba(0,0,0,.5));
 }
 
 .buscado:hover{
-    transform:translate(-50%,-50%) scale(1.08);
+    transform:scale(1.06) rotate(-2deg);
     filter:drop-shadow(0 0 25px rgba(255,210,120,.9));
 }
-  
 
 
 
@@ -574,25 +577,13 @@ input, textarea, select {
   .logro:hover{
       transform:scale(1.08);
   }
-     #tab-buscados{
-        aspect-ratio:auto;
-        overflow:visible;
-        padding:20px;
+    .lista-buscados{
+        grid-template-columns:1fr;
+        gap:40px;
     }
 
     .buscado{
-        position:relative !important;
-        left:auto !important;
-        top:auto !important;
-        transform:none !important;
-
         width:220px;
-        display:block;
-        margin:20px auto;
-    }
-
-    .buscado:hover{
-        transform:scale(1.05);
     }
     
     
@@ -878,23 +869,28 @@ input, textarea, select {
 
     <!-- BUSCADOS -->
 <div id="tab-buscados" class="oculto">
-     style="
-       max-width:1200px;
-       margin:0 auto;
-       min-height:800px;
-     ">
 
-  <h2 class="titulo-baldur"
-      style="
-        text-align:center;
-        font-size:3rem;
-        margin-bottom:30px;
-      ">
-      </h2>
-  <img
-      src="assets/buscados/cartel.png"
-      class="cartel-buscados">
-  
+    <h2 class="titulo-baldur"
+        style="text-align:center;font-size:3rem;margin-bottom:40px;">
+        📜 Buscados
+    </h2>
+
+    <div class="lista-buscados">
+
+        <img src="assets/buscados/cartel1.png" class="buscado">
+
+        <img src="assets/buscados/cartel2.png" class="buscado">
+
+        <img src="assets/buscados/cartel3.png" class="buscado">
+
+        <img src="assets/buscados/cartel4.png" class="buscado">
+
+        <img src="assets/buscados/cartel5.png" class="buscado">
+
+        <img src="assets/buscados/cartel6.png" class="buscado">
+
+    </div>
+
 </div>
 
 
