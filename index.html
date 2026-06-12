@@ -430,24 +430,19 @@ input, textarea, select {
 
  #tab-logros{
   position: relative;
-  width: min(1000px, 100%);
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 
-  aspect-ratio: 16 / 9;  /* 🔥 CLAVE */
-  background: transparent;
+  aspect-ratio: 16 / 9; /* CLAVE */
+  overflow: hidden;
 }
 
 .logro{
-    position:absolute;
-    width:90px;
-
-    transform:translate(-50%,-50%);
-
-    filter:
-      drop-shadow(0 0 15px rgba(255,140,0,.4));
-
-    transition:.3s;
-    cursor:pointer;
+  position:absolute;
+  width:90px;
+  transform:translate(-50%,-50%);
+  z-index:2;
 }
 
 .logro:hover{
@@ -458,7 +453,15 @@ input, textarea, select {
     filter:
       drop-shadow(0 0 30px rgba(255,180,0,.9));
 } 
-
+.logros-bg{
+  position:absolute;
+  inset:0;
+  background-image:url("assets/logros/fondo-logros.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+  z-index:0;
+}
 
 
   
@@ -712,7 +715,10 @@ input, textarea, select {
         text-align:center;
         font-size:3rem;
         margin-bottom:30px;
+    
       ">
+    <div class="logros-bg"></div>
+
     
   </h2>
 <img src="assets/logros/logo1.png" id="logro1" class="logro" style="left:44%; top:25%;">
