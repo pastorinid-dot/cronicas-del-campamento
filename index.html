@@ -428,13 +428,12 @@ input, textarea, select {
 
 
 
- #tab-logros{
+ #tab-logros {
   position: relative;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-
-  aspect-ratio: 16 / 9; /* CLAVE */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -456,10 +455,9 @@ input, textarea, select {
 .logros-bg{
   position:absolute;
   inset:0;
-  background-image:url("assets/logros/fondo-logros.png");
-  background-size:contain;
+  background-image:url("assets/logros/fondo3.png");
+  background-size: 100% 100%;   /* 🔥 CLAVE */
   background-repeat:no-repeat;
-  background-position:center;
   z-index:0;
 }
 
@@ -699,7 +697,7 @@ input, textarea, select {
 </div>
 
 
-
+<div class="logros-bg"></div>
     
     <!-- LOGROS -->
 <div id="tab-logros"
@@ -717,7 +715,7 @@ input, textarea, select {
         margin-bottom:30px;
     
       ">
-    <div class="logros-bg"></div>
+
 
     
   </h2>
