@@ -434,43 +434,40 @@ input, textarea, select {
 
 
 
- #tab-logros {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
+ #tab-logros{
+    position:relative;
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    min-height:700px;
+}
+.lista-logros{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:50px 80px;
+    justify-items:center;
+    align-items:center;
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 0;
 }
 
 .logro{
-  position:absolute;
-  width: clamp(45px, 10vw, 90px);
-  transform:translate(-50%,-50%);
-  z-index:2;
+    position:relative;
+    left:auto !important;
+    top:auto !important;
+    transform:none !important;
+    width:110px;
+    z-index:2;
+    transition:.3s;
 }
 
 .logro:hover{
-    transform:
-      translate(-50%,-50%)
-      scale(1.15);
+    transform:scale(1.15) !important;
+    filter:drop-shadow(0 0 30px rgba(255,180,0,.9));
+}
 
-    filter:
-      drop-shadow(0 0 30px rgba(255,180,0,.9));
-} 
-.logros-bg{
-  position:absolute;
-  inset:0;
-  background-image:url("assets/logros/fondo3.png");
-  background-size: 100% 100%;   /* 🔥 CLAVE */
-  background-repeat:no-repeat;
-  z-index:0;
-}
-.contenedor-logros{
-    position:relative;
-    width:100%;
-    height:100%;
-}
+
   
 #tab-buscados{
     max-width:1200px;
@@ -549,9 +546,6 @@ input, textarea, select {
       padding:20px;
   }
 
-  .logros-bg{
-      display:none;
-  }
 
 .lista-logros{
     width:100%;
@@ -841,7 +835,7 @@ input, textarea, select {
        max-width:1200px;
        margin:0 auto;
             ">
-<div class="logros-bg"></div>
+
   
   <h2 class="titulo-baldur"
       style="
@@ -854,16 +848,14 @@ input, textarea, select {
   
  <div class="lista-logros">
   
-<img src="assets/logros/logo1.png" class="logro" style="left:36.7%; top:27%;">
-<img src="assets/logros/logo2.png" class="logro" style="left:50%; top:27%;">
-<img src="assets/logros/logo3.png" class="logro" style="left:63.8%; top:27%;">
-
-<img src="assets/logros/logo4.png" class="logro" style="left:23.3%; top:55%;">
-
-<img src="assets/logros/logo5.png" class="logro" style="left:36.2%; top:55%;">
-<img src="assets/logros/logo6.png" class="logro" style="left:50.4%; top:55%;">
-<img src="assets/logros/logo7.png" class="logro" style="left:64.2%; top:54%;">
-<img src="assets/logros/logo8.png" class="logro" style="left:77.5%; top:55%;">
+<img src="assets/logros/logo1.png" class="logro">
+<img src="assets/logros/logo2.png" class="logro">
+<img src="assets/logros/logo3.png" class="logro">
+<img src="assets/logros/logo4.png" class="logro">
+<img src="assets/logros/logo5.png" class="logro">
+<img src="assets/logros/logo6.png" class="logro">
+<img src="assets/logros/logo7.png" class="logro">
+<img src="assets/logros/logo8.png" class="logro">
 </div>
 </div>
 
