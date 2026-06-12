@@ -428,27 +428,37 @@ input, textarea, select {
 
 
 
- .logros-grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:40px;
-  justify-items:center;
-  align-items:center;
-  padding:40px;
+ #tab-logros{
+  position: relative;
+  width: min(1000px, 100%);
+  margin: 0 auto;
+
+  aspect-ratio: 16 / 9;  /* 🔥 CLAVE */
+  background: transparent;
 }
 
 .logro{
-  width:90px;
-  height:auto;
-  cursor:pointer;
-  transition:.3s;
-  filter: drop-shadow(0 0 15px rgba(255,140,0,.4));
+    position:absolute;
+    width:90px;
+
+    transform:translate(-50%,-50%);
+
+    filter:
+      drop-shadow(0 0 15px rgba(255,140,0,.4));
+
+    transition:.3s;
+    cursor:pointer;
 }
 
 .logro:hover{
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 30px rgba(255,180,0,.9));
-}
+    transform:
+      translate(-50%,-50%)
+      scale(1.15);
+
+    filter:
+      drop-shadow(0 0 30px rgba(255,180,0,.9));
+} 
+
 
 
   
@@ -690,30 +700,32 @@ input, textarea, select {
     
     <!-- LOGROS -->
 <div id="tab-logros"
-     class="oculto pergamino"
+     class="oculto"
      style="
-       max-width:900px;
+       max-width:1200px;
        margin:0 auto;
+       min-height:800px;
      ">
 
   <h2 class="titulo-baldur"
-      style="text-align:center;font-size:3rem;margin-bottom:30px;">
-    🏆 Logros
+      style="
+        text-align:center;
+        font-size:3rem;
+        margin-bottom:30px;
+      ">
+    
   </h2>
+<img src="assets/logros/logo1.png" id="logro1" class="logro" style="left:44%; top:25%;">
+<img src="assets/logros/logo2.png" id="logro2" class="logro" style="left:60%; top:25%;">
+<img src="assets/logros/logo3.png" id="logro3" class="logro" style="left:76.5%; top:25.5%;">
+<img src="assets/logros/logo4.png" id="logro4" class="logro" style="left:28%; top:52%;">
 
-  <div class="logros-grid">
-
-    <img src="assets/logros/logo1.png" class="logro">
-    <img src="assets/logros/logo2.png" class="logro">
-    <img src="assets/logros/logo3.png" class="logro">
-    <img src="assets/logros/logo4.png" class="logro">
-    <img src="assets/logros/logo5.png" class="logro">
-    <img src="assets/logros/logo6.png" class="logro">
-    <img src="assets/logros/logo7.png" class="logro">
-    <img src="assets/logros/logo8.png" class="logro">
-
-  </div>
+<img src="assets/logros/logo5.png" id="logro5" class="logro" style="left:43.5%; top:52%;">
+<img src="assets/logros/logo6.png" id="logro6" class="logro" style="left:60.5%; top:52%;">
+<img src="assets/logros/logo7.png" id="logro7" class="logro" style="left:77%; top:51.5%;">
+<img src="assets/logros/logo8.png" id="logro8" class="logro" style="left:93%; top:52%;">
 </div>
+
 
 
 
