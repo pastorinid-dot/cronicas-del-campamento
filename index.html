@@ -108,9 +108,9 @@ input, textarea, select {
   align-items: center;
 }
 
-.item-inventario img{
-  width: 60px;
-  height: 60px;
+..item-inventario img{
+  width: clamp(45px, 12vw, 60px);
+  height: clamp(45px, 12vw, 60px);
   object-fit: contain;
   border-radius: 6px;
   border: 1px solid #8d6e63;
@@ -439,7 +439,7 @@ input, textarea, select {
 
 .logro{
   position:absolute;
-  width:90px;
+  width: clamp(45px, 10vw, 90px);
   transform:translate(-50%,-50%);
   z-index:2;
 }
@@ -462,6 +462,55 @@ input, textarea, select {
 }
 
 
+
+  @media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .pergamino {
+    margin: 10px;
+    padding: 12px;
+  }
+
+  .titulo-baldur {
+    font-size: 2rem !important;
+  }
+
+  #tab-biblioteca div {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .pagina {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .logro {
+    width: 60px;
+  }
+
+  #modalInventario .pergamino {
+    width: 95% !important;
+  }
+}
+  
+  img, canvas {
+  max-width: 100%;
+  height: auto;
+}
   
   
 </style>
