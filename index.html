@@ -529,13 +529,6 @@ input, textarea, select {
     overflow:hidden;
 }
 
-.buscados-bg{
-    position:absolute;
-    inset:0;
-    background:url("assets/fondo4.png") center/100% 100% no-repeat;
-    z-index:0;
-}
-
 .contenido-buscados{
     position:relative;
     z-index:2;
@@ -820,9 +813,12 @@ input, textarea, select {
 <div id="tab-buscados"
      class="oculto"
      style="
+       position:relative;
+       width:100%;
        max-width:1200px;
        margin:0 auto;
-       min-height:800px;
+       aspect-ratio:16/9;
+       overflow:hidden;
      ">
 
   <h2 class="titulo-baldur"
@@ -833,7 +829,7 @@ input, textarea, select {
       ">
 
       </h2>
-  <div class="buscados-bg"></div>
+
    
 </div>
 
