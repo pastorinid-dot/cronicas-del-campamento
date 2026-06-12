@@ -385,11 +385,6 @@ input, textarea, select {
  .titulo-baldur { font-size: 2rem!important; }
 }
   
-  #tab-logros{
-      aspect-ratio:auto;
-      overflow:visible;
-      height:auto;
-  }
   
   #musicPlayer{
   position:fixed;
@@ -519,10 +514,11 @@ input, textarea, select {
   #modalInventario .pergamino {
     width: 95% !important;
   }
-    #tab-logros{
-    aspect-ratio:auto;
-    min-height:auto;
-}
+      #tab-logros{
+      aspect-ratio:auto;
+      overflow:visible;
+      height:auto;
+  }
 
 .logros-bg{
     display:none;
@@ -535,16 +531,26 @@ input, textarea, select {
     gap:30px;
     padding:20px;
 }
+     .lista-logros{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:25px;
+  }
 
 .logro{
-    position:static;
-    transform:none;
-    width:120px;
-}
+      position:static !important;
+      left:auto !important;
+      top:auto !important;
+      transform:none !important;
+      width:120px;
+  }
 
 .logro:hover{
     transform:scale(1.08);
 }
+    
+    
 }
   
   img, canvas {
@@ -806,7 +812,8 @@ input, textarea, select {
       ">
 
 <div class="logros-bg"></div>
-     <div class="contenedor-logros">
+    
+      <div class="lista-logros">
     
   </h2>
 <img src="assets/logros/logo1.png" class="logro" style="left:36.7%; top:24%;">
