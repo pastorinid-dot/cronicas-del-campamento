@@ -428,30 +428,26 @@ input, textarea, select {
 
 
 
-  #tab-logros{
-    position:relative;
+ .logros-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:40px;
+  justify-items:center;
+  align-items:center;
+  padding:40px;
 }
 
 .logro{
-    position:absolute;
-    width:90px;
-
-    transform:translate(-50%,-50%);
-
-    filter:
-      drop-shadow(0 0 15px rgba(255,140,0,.4));
-
-    transition:.3s;
-    cursor:pointer;
+  width:90px;
+  height:auto;
+  cursor:pointer;
+  transition:.3s;
+  filter: drop-shadow(0 0 15px rgba(255,140,0,.4));
 }
 
 .logro:hover{
-    transform:
-      translate(-50%,-50%)
-      scale(1.15);
-
-    filter:
-      drop-shadow(0 0 30px rgba(255,180,0,.9));
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 30px rgba(255,180,0,.9));
 }
 
 
@@ -694,30 +690,29 @@ input, textarea, select {
     
     <!-- LOGROS -->
 <div id="tab-logros"
-     class="oculto"
+     class="oculto pergamino"
      style="
-       max-width:1200px;
+       max-width:900px;
        margin:0 auto;
-       min-height:800px;
      ">
 
   <h2 class="titulo-baldur"
-      style="
-        text-align:center;
-        font-size:3rem;
-        margin-bottom:30px;
-      ">
-    
+      style="text-align:center;font-size:3rem;margin-bottom:30px;">
+    🏆 Logros
   </h2>
-<img src="assets/logros/logo1.png" id="logro1" class="logro" style="left:440px; top:180px;">
-<img src="assets/logros/logo2.png" id="logro2" class="logro" style="left:600px; top:180px;">
-<img src="assets/logros/logo3.png" id="logro3" class="logro" style="left:765px; top:185px;">
-<img src="assets/logros/logo4.png" id="logro4" class="logro" style="left:280px; top:375px;">
 
-<img src="assets/logros/logo5.png" id="logro5" class="logro" style="left:435px; top:375px;">
-<img src="assets/logros/logo6.png" id="logro6" class="logro" style="left:605px; top:375px;">
-<img src="assets/logros/logo7.png" id="logro7" class="logro" style="left:770px; top:370px;">
-<img src="assets/logros/logo8.png" id="logro8" class="logro" style="left:930px; top:375px;">
+  <div class="logros-grid">
+
+    <img src="assets/logros/logo1.png" class="logro">
+    <img src="assets/logros/logo2.png" class="logro">
+    <img src="assets/logros/logo3.png" class="logro">
+    <img src="assets/logros/logo4.png" class="logro">
+    <img src="assets/logros/logo5.png" class="logro">
+    <img src="assets/logros/logo6.png" class="logro">
+    <img src="assets/logros/logo7.png" class="logro">
+    <img src="assets/logros/logo8.png" class="logro">
+
+  </div>
 </div>
 
 
